@@ -45,3 +45,27 @@ Must be proven by `test/isolation` (hostile CLAUDE.md + hook) before the first r
 `bench` fetches each corpus repo at its pinned SHA into `.cache/`, runs the pipeline, matches
 findings to labels (same file, line ±5 or same claim), prints precision/recall + cost/latency.
 Stage outputs are cached by (file hash, prompt version) so reruns are cheap and resumable.
+
+# M2 plan (2026-10-12) — starts only if the held-out stability check holds
+
+## Delivery decision
+Post-merge fix PR (Dependabot model) on push to the default branch + weekly full audit as backstop.
+Rejected: PR comments (muted noise; fork PRs have no secrets), pushing into contributor branches
+(intrusive, forks not writable), `pull_request_target` (an attacker PR could steer fix text into
+AGENTS.md). Risk accepted: rot lands on main before the fix PR; bot-authored PRs may get less
+attention than human ones (mitigation: maintainers install it themselves).
+
+## Work items
+1. `src/scope.ts` + `audit --since <ref>`: map each claim's anchors to deciding files (path → itself/
+   prefix; script/package → package.json; make/just target → Makefiles/justfiles; symbol/api → files
+   defining it; command/other → config files + path-like tokens in the claim). Changed instruction
+   file → all its claims. Only affected claims are verified.
+2. Scoping eval (no LLM): for each labeled stale claim, would scope() select it given the real diff
+   from the instruction file's last edit to the pinned commit? Target: ≥90% of medium/high.
+3. `pr` command: scoped or full audit → apply medium/high fixes → branch `agent-drift/fixes` →
+   open/update one PR with evidence. Guard: an edit's `old` text must overlap the flagged claim's
+   lines (±2), else dropped.
+4. Composite GitHub Action + example workflow: push + weekly schedule, preflight that the Claude
+   Code CLI supports the isolation flags (refuse otherwise), budget cap, least-privilege token.
+5. E2E: private sandbox repo with planted rot → push that breaks a claim → real fix PR.
+   Needs from user: approval to create the sandbox repo; a CI credential secret they add themselves.
