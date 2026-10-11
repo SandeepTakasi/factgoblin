@@ -20,6 +20,21 @@ wrong (labels marked `adjudicated` in heldout-findings.json). Missed: three low-
 (payload "Payload 3.x" on a 4.0 beta; outline "use strict mode" with `strict: false`; outline
 "RESTful" for an RPC API).
 
+## Stability (3 independent uncached runs on the held-out set)
+
+| | orig | stab1 | stab2 |
+|---|---|---|---|
+| Recall, medium+high | 7/7 | 7/7 | 6/7 |
+| Precision, medium/high | 7/7 | 9/10 | 6/6 |
+| Findings on clean files | 0 | 0 | 0 |
+| Cost | $7.24 | $6.47 | $6.12 |
+
+6 of 7 medium/high labels found in every run; payload :272 in 2 of 3. The one medium/high "false
+positive" (material-ui :46, `pnpm prettier # Format staged changes`, script formats all changes vs
+master) is a literal-wording dispute, counted against the tool. Variance is mainly in severity
+(same finding high in one run, medium in another) and in which low findings appear. Design
+consequence for M2: fix-PR updates must be additive/sticky, not rebuilt from scratch each push.
+
 ## Development corpus (19 repos, prompts tuned against it — optimistic)
 
 Run 2: 16/16 precision on medium/high, 9/11 high recall, $18.83.
