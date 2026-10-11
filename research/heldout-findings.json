@@ -126,6 +126,36 @@
    "severity": "medium",
    "verified_by": "claude",
    "evidence": "No script/crash-to-prompt in the repo (script/sentry-fetch exists); the only reference is .rules:166."
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 35,
+   "claim": "pnpm test:unit runs all unit tests (jsdom)",
+   "severity": "low",
+   "verified_by": "claude",
+   "evidence": "test:unit has no TEST_SCOPE, so vitest.config.mts getProjects() returns [...BROWSER_TESTS, ...NODE_TESTS]: browser projects run too, not only jsdom.",
+   "adjudicated": "relabeled from not_stale after the held-out run: the tool flagged it, direct code check showed the tool was right"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 38,
+   "claim": "test:browser runs in Chrome, Firefox, WebKit",
+   "severity": "low",
+   "verified_by": "claude",
+   "evidence": "vitest.shared.mts:137 instances default to chromium unless VITEST_BROWSERS is set; only CI sets firefox/webkit.",
+   "adjudicated": "relabeled from not_stale after the held-out run: the tool flagged it, direct code check showed the tool was right"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 70,
+   "claim": "Memoization example uses useHierarchyDrawer({ filterByCollection })",
+   "severity": "low",
+   "verified_by": "claude",
+   "evidence": "Hook was renamed: useHierarchyModal (packages/ui/src/elements/Hierarchy/Modal/useHierarchyModal.tsx) takes filterByCollection and is exported from @payloadcms/ui; useHierarchyDrawer does not exist.",
+   "adjudicated": "relabeled from not_stale after the held-out run: the tool flagged it, direct code check showed the tool was right"
   }
  ],
  "not_stale": [
@@ -556,14 +586,6 @@
   {
    "repo": "mui/material-ui",
    "file": "AGENTS.md",
-   "line": 35,
-   "claim": "mui/material-ui AGENTS.md claim at line 35",
-   "trap": "verified_true",
-   "why_rejected": "verified true by exhaustive labeling agent"
-  },
-  {
-   "repo": "mui/material-ui",
-   "file": "AGENTS.md",
    "line": 36,
    "claim": "mui/material-ui AGENTS.md claim at line 36",
    "trap": "verified_true",
@@ -574,14 +596,6 @@
    "file": "AGENTS.md",
    "line": 37,
    "claim": "mui/material-ui AGENTS.md claim at line 37",
-   "trap": "verified_true",
-   "why_rejected": "verified true by exhaustive labeling agent"
-  },
-  {
-   "repo": "mui/material-ui",
-   "file": "AGENTS.md",
-   "line": 38,
-   "claim": "mui/material-ui AGENTS.md claim at line 38",
    "trap": "verified_true",
    "why_rejected": "verified true by exhaustive labeling agent"
   },
@@ -2090,14 +2104,6 @@
    "why_rejected": "verified true by exhaustive labeling agent"
   },
   {
-   "repo": "payloadcms/payload",
-   "file": "AGENTS.md",
-   "line": 70,
-   "claim": "useHierarchyDrawer hook (in memoization example)",
-   "trap": "agent_false_positive",
-   "why_rejected": "Illustrative BAD/GOOD snippet; hook name is an example. Rejected."
-  },
-  {
    "repo": "streamlit/streamlit",
    "file": "AGENTS.md",
    "line": 7,
@@ -2970,5 +2976,6 @@
    "why_rejected": "verified true by exhaustive labeling agent"
   }
  ],
- "clean_files": []
+ "clean_files": [],
+ "adjudication_note": "3 labels (mui 35, mui 38, payload 70) were changed after the first held-out run. Pre-registered results must be reported alongside adjusted ones."
 }

@@ -10,6 +10,8 @@ import sys
 
 OUT = 'research/heldout-findings.json'
 d = json.load(open(OUT))
+# Post-run adjudications are recorded only in OUT; keep them across re-ingests.
+adjudicated = [x for x in d['stale'] if x.get('adjudicated')]
 d['stale'], d['not_stale'] = [], []
 pending = 0
 for path in sys.argv[1:]:
@@ -27,5 +29,8 @@ for path in sys.argv[1:]:
                 d['not_stale'].append({**base, 'trap': 'agent_false_positive', 'why_rejected': c['evidence']})
             else:
                 pending += 1
+key = lambda x: (x['repo'], x['file'], x['line'])
+d['stale'] += adjudicated
+d['not_stale'] = [x for x in d['not_stale'] if key(x) not in {key(a) for a in adjudicated}]
 json.dump(d, open(OUT, 'w'), indent=1)
 print(f"{len(d['stale'])} stale, {len(d['not_stale'])} not_stale, {pending} stale claims still unreviewed")
