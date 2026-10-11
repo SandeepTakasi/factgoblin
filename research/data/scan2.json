@@ -1,0 +1,1256 @@
+[
+ {
+  "repo": "ClickHouse/ClickHouse",
+  "stars": 50329,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 17020,
+    "last_touched": "2026-03-02",
+    "commits_since": 85023
+   }
+  ],
+  "merged_30d": 3562,
+  "file": "AGENTS.md",
+  "staleness": 85023
+ },
+ {
+  "repo": "PostHog/posthog",
+  "stars": 40214,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 44241,
+    "last_touched": "2026-10-09",
+    "commits_since": 80
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 44241,
+    "last_touched": "2026-05-04",
+    "commits_since": 24900
+   }
+  ],
+  "merged_30d": 6352,
+  "file": "CLAUDE.md",
+  "staleness": 24900
+ },
+ {
+  "repo": "home-assistant/core",
+  "stars": 91352,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 5556,
+    "last_touched": "2026-08-04",
+    "commits_since": 5017
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 5556,
+    "last_touched": "2026-01-23",
+    "commits_since": 15367
+   }
+  ],
+  "merged_30d": 2435,
+  "file": "CLAUDE.md",
+  "staleness": 15367
+ },
+ {
+  "repo": "zed-industries/zed",
+  "stars": 91532,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 12461,
+    "last_touched": "2026-01-19",
+    "commits_since": 6056
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 12461,
+    "last_touched": "2025-04-17",
+    "commits_since": 13212
+   }
+  ],
+  "merged_30d": 526,
+  "file": "CLAUDE.md",
+  "staleness": 13212
+ },
+ {
+  "repo": "apache/superset",
+  "stars": 75099,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 16652,
+    "last_touched": "2026-10-01",
+    "commits_since": 232
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 16652,
+    "last_touched": "2025-09-27",
+    "commits_since": 5910
+   }
+  ],
+  "merged_30d": 794,
+  "file": "CLAUDE.md",
+  "staleness": 5910
+ },
+ {
+  "repo": "apache/airflow",
+  "stars": 47140,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 22734,
+    "last_touched": "2026-10-04",
+    "commits_since": 240
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 22734,
+    "last_touched": "2026-02-25",
+    "commits_since": 5821
+   }
+  ],
+  "merged_30d": 1054,
+  "file": "CLAUDE.md",
+  "staleness": 5821
+ },
+ {
+  "repo": "prisma/prisma",
+  "stars": 47695,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 11134,
+    "last_touched": "2026-09-11",
+    "commits_since": 202
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 11134,
+    "last_touched": "2026-03-03",
+    "commits_since": 5545
+   }
+  ],
+  "merged_30d": null,
+  "file": "CLAUDE.md",
+  "staleness": 5545
+ },
+ {
+  "repo": "oven-sh/bun",
+  "stars": 96172,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 17614,
+    "last_touched": "2025-06-28",
+    "commits_since": 5542
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 17614,
+    "last_touched": "2026-09-21",
+    "commits_since": 207
+   }
+  ],
+  "merged_30d": 439,
+  "file": "AGENTS.md",
+  "staleness": 5542
+ },
+ {
+  "repo": "browser-use/browser-use",
+  "stars": 117515,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 38463,
+    "last_touched": "2026-07-30",
+    "commits_since": 397
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 11149,
+    "last_touched": "2025-08-31",
+    "commits_since": 4406
+   }
+  ],
+  "merged_30d": 14,
+  "file": "CLAUDE.md",
+  "staleness": 4406
+ },
+ {
+  "repo": "pnpm/pnpm",
+  "stars": 36773,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 32376,
+    "last_touched": "2026-10-02",
+    "commits_since": 217
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 32376,
+    "last_touched": "2026-01-16",
+    "commits_since": 3889
+   }
+  ],
+  "merged_30d": 1084,
+  "file": "CLAUDE.md",
+  "staleness": 3889
+ },
+ {
+  "repo": "langfuse/langfuse",
+  "stars": 35600,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 16347,
+    "last_touched": "2026-03-26",
+    "commits_since": 3393
+   }
+  ],
+  "merged_30d": 766,
+  "file": "AGENTS.md",
+  "staleness": 3393
+ },
+ {
+  "repo": "pydantic/pydantic-ai",
+  "stars": 20531,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 17286,
+    "last_touched": "2026-10-10",
+    "commits_since": 3
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 17286,
+    "last_touched": "2026-02-02",
+    "commits_since": 2406
+   }
+  ],
+  "merged_30d": 716,
+  "file": "CLAUDE.md",
+  "staleness": 2406
+ },
+ {
+  "repo": "twentyhq/twenty",
+  "stars": 58165,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 4997,
+    "last_touched": "2026-08-19",
+    "commits_since": 2157
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 4997,
+    "last_touched": "2026-09-26",
+    "commits_since": 695
+   }
+  ],
+  "merged_30d": 1331,
+  "file": "AGENTS.md",
+  "staleness": 2157
+ },
+ {
+  "repo": "huggingface/transformers",
+  "stars": 167030,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 3287,
+    "last_touched": "2026-03-18",
+    "commits_since": 1917
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 3287,
+    "last_touched": "2026-03-18",
+    "commits_since": 1917
+   }
+  ],
+  "merged_30d": 329,
+  "file": "AGENTS.md",
+  "staleness": 1917
+ },
+ {
+  "repo": "sst/opencode",
+  "stars": 212488,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 8748,
+    "last_touched": "2026-06-25",
+    "commits_since": 1437
+   }
+  ],
+  "merged_30d": null,
+  "file": "AGENTS.md",
+  "staleness": 1437
+ },
+ {
+  "repo": "huggingface/trl",
+  "stars": 19483,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 6602,
+    "last_touched": "2026-03-26",
+    "commits_since": 1215
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 6602,
+    "last_touched": "2026-03-26",
+    "commits_since": 1215
+   }
+  ],
+  "merged_30d": 239,
+  "file": "AGENTS.md",
+  "staleness": 1215
+ },
+ {
+  "repo": "openai/openai-agents-python",
+  "stars": 29950,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 38241,
+    "last_touched": "2026-09-28",
+    "commits_since": 68
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 38241,
+    "last_touched": "2026-04-15",
+    "commits_since": 1167
+   }
+  ],
+  "merged_30d": 236,
+  "file": "CLAUDE.md",
+  "staleness": 1167
+ },
+ {
+  "repo": "vercel/ai",
+  "stars": 27227,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 13420,
+    "last_touched": "2026-08-24",
+    "commits_since": 937
+   }
+  ],
+  "merged_30d": 935,
+  "file": "AGENTS.md",
+  "staleness": 937
+ },
+ {
+  "repo": "better-auth/better-auth",
+  "stars": 30240,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 5563,
+    "last_touched": "2026-09-08",
+    "commits_since": 126
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 5563,
+    "last_touched": "2026-05-24",
+    "commits_since": 776
+   }
+  ],
+  "merged_30d": 111,
+  "file": "CLAUDE.md",
+  "staleness": 776
+ },
+ {
+  "repo": "QwenLM/qwen-code",
+  "stars": 28399,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 17255,
+    "last_touched": "2026-09-20",
+    "commits_since": 725
+   }
+  ],
+  "merged_30d": 1038,
+  "file": "AGENTS.md",
+  "staleness": 725
+ },
+ {
+  "repo": "inngest/inngest",
+  "stars": 5930,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 2783,
+    "last_touched": "2026-05-22",
+    "commits_since": 524
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 2783,
+    "last_touched": "2026-05-07",
+    "commits_since": 613
+   }
+  ],
+  "merged_30d": 105,
+  "file": "CLAUDE.md",
+  "staleness": 613
+ },
+ {
+  "repo": "nodejs/node",
+  "stars": 122265,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 3083,
+    "last_touched": "2026-09-12",
+    "commits_since": 574
+   }
+  ],
+  "merged_30d": 321,
+  "file": "AGENTS.md",
+  "staleness": 574
+ },
+ {
+  "repo": "colinhacks/zod",
+  "stars": 44082,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 22032,
+    "last_touched": "2026-09-09",
+    "commits_since": 59
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 22032,
+    "last_touched": "2025-11-18",
+    "commits_since": 564
+   }
+  ],
+  "merged_30d": 10,
+  "file": "CLAUDE.md",
+  "staleness": 564
+ },
+ {
+  "repo": "chakra-ui/chakra-ui",
+  "stars": 40682,
+  "files": [
+   {
+    "file": "CLAUDE.md",
+    "bytes": 9398,
+    "last_touched": "2025-09-30",
+    "commits_since": 440
+   }
+  ],
+  "merged_30d": 9,
+  "file": "CLAUDE.md",
+  "staleness": 440
+ },
+ {
+  "repo": "duckdb/duckdb",
+  "stars": 42070,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 18196,
+    "last_touched": "2026-10-06",
+    "commits_since": 425
+   }
+  ],
+  "merged_30d": 661,
+  "file": "AGENTS.md",
+  "staleness": 425
+ },
+ {
+  "repo": "huggingface/diffusers",
+  "stars": 34702,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 4103,
+    "last_touched": "2026-06-16",
+    "commits_since": 373
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 4103,
+    "last_touched": "2026-06-16",
+    "commits_since": 373
+   }
+  ],
+  "merged_30d": 72,
+  "file": "AGENTS.md",
+  "staleness": 373
+ },
+ {
+  "repo": "nrwl/nx",
+  "stars": 29401,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 9130,
+    "last_touched": "2026-08-26",
+    "commits_since": 315
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 10158,
+    "last_touched": "2026-10-09",
+    "commits_since": 5
+   }
+  ],
+  "merged_30d": 214,
+  "file": "AGENTS.md",
+  "staleness": 315
+ },
+ {
+  "repo": "charmbracelet/crush",
+  "stars": 28586,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 10603,
+    "last_touched": "2026-08-04",
+    "commits_since": 303
+   }
+  ],
+  "merged_30d": 55,
+  "file": "AGENTS.md",
+  "staleness": 303
+ },
+ {
+  "repo": "documenso/documenso",
+  "stars": 15373,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 2740,
+    "last_touched": "2026-05-08",
+    "commits_since": 273
+   }
+  ],
+  "merged_30d": 42,
+  "file": "AGENTS.md",
+  "staleness": 273
+ },
+ {
+  "repo": "huggingface/peft",
+  "stars": 21778,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 6425,
+    "last_touched": "2026-06-04",
+    "commits_since": 257
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 6425,
+    "last_touched": "2026-06-04",
+    "commits_since": 257
+   }
+  ],
+  "merged_30d": 69,
+  "file": "AGENTS.md",
+  "staleness": 257
+ },
+ {
+  "repo": "ant-design/ant-design",
+  "stars": 99730,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 13874,
+    "last_touched": "2026-09-01",
+    "commits_since": 151
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 13874,
+    "last_touched": "2026-08-14",
+    "commits_since": 249
+   }
+  ],
+  "merged_30d": 134,
+  "file": "CLAUDE.md",
+  "staleness": 249
+ },
+ {
+  "repo": "mui/material-ui",
+  "stars": 99157,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 8986,
+    "last_touched": "2026-08-20",
+    "commits_since": 248
+   }
+  ],
+  "merged_30d": 206,
+  "file": "AGENTS.md",
+  "staleness": 248
+ },
+ {
+  "repo": "Kilo-Org/kilocode",
+  "stars": 27548,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 18553,
+    "last_touched": "2026-10-06",
+    "commits_since": 239
+   }
+  ],
+  "merged_30d": 445,
+  "file": "AGENTS.md",
+  "staleness": 239
+ },
+ {
+  "repo": "metabase/metabase",
+  "stars": 49604,
+  "files": [
+   {
+    "file": "CLAUDE.md",
+    "bytes": 7571,
+    "last_touched": "2026-10-02",
+    "commits_since": 237
+   }
+  ],
+  "merged_30d": 1133,
+  "file": "CLAUDE.md",
+  "staleness": 237
+ },
+ {
+  "repo": "openai/openai-python",
+  "stars": 31794,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 6541,
+    "last_touched": "2026-08-24",
+    "commits_since": 216
+   }
+  ],
+  "merged_30d": 162,
+  "file": "AGENTS.md",
+  "staleness": 216
+ },
+ {
+  "repo": "dagster-io/dagster",
+  "stars": 16258,
+  "files": [
+   {
+    "file": "CLAUDE.md",
+    "bytes": 5280,
+    "last_touched": "2026-08-26",
+    "commits_since": 212
+   }
+  ],
+  "merged_30d": 8,
+  "file": "CLAUDE.md",
+  "staleness": 212
+ },
+ {
+  "repo": "danny-avila/LibreChat",
+  "stars": 45481,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 15260,
+    "last_touched": "2026-10-01",
+    "commits_since": 194
+   }
+  ],
+  "merged_30d": null,
+  "file": "AGENTS.md",
+  "staleness": 194
+ },
+ {
+  "repo": "supabase/supabase",
+  "stars": 111301,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 6918,
+    "last_touched": "2026-10-02",
+    "commits_since": 161
+   }
+  ],
+  "merged_30d": 633,
+  "file": "AGENTS.md",
+  "staleness": 161
+ },
+ {
+  "repo": "vllm-project/vllm",
+  "stars": 93505,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 5825,
+    "last_touched": "2026-10-08",
+    "commits_since": 159
+   }
+  ],
+  "merged_30d": 1691,
+  "file": "AGENTS.md",
+  "staleness": 159
+ },
+ {
+  "repo": "streamlit/streamlit",
+  "stars": 45930,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 8880,
+    "last_touched": "2026-09-29",
+    "commits_since": 157
+   }
+  ],
+  "merged_30d": 373,
+  "file": "AGENTS.md",
+  "staleness": 157
+ },
+ {
+  "repo": "payloadcms/payload",
+  "stars": 45175,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 21545,
+    "last_touched": "2026-09-28",
+    "commits_since": 143
+   }
+  ],
+  "merged_30d": 231,
+  "file": "AGENTS.md",
+  "staleness": 143
+ },
+ {
+  "repo": "triggerdotdev/trigger.dev",
+  "stars": 16509,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 14489,
+    "last_touched": "2026-09-30",
+    "commits_since": 129
+   }
+  ],
+  "merged_30d": 20,
+  "file": "AGENTS.md",
+  "staleness": 129
+ },
+ {
+  "repo": "oxc-project/oxc",
+  "stars": 22998,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 14548,
+    "last_touched": "2026-10-04",
+    "commits_since": 121
+   }
+  ],
+  "merged_30d": 611,
+  "file": "AGENTS.md",
+  "staleness": 121
+ },
+ {
+  "repo": "langchain-ai/langchain",
+  "stars": 147555,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 20580,
+    "last_touched": "2026-09-23",
+    "commits_since": 120
+   }
+  ],
+  "merged_30d": 217,
+  "file": "AGENTS.md",
+  "staleness": 120
+ },
+ {
+  "repo": "ray-project/ray",
+  "stars": 44003,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 3694,
+    "last_touched": "2026-10-02",
+    "commits_since": 116
+   }
+  ],
+  "merged_30d": 429,
+  "file": "AGENTS.md",
+  "staleness": 116
+ },
+ {
+  "repo": "calcom/cal.com",
+  "stars": 48936,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 9225,
+    "last_touched": "2026-04-15",
+    "commits_since": 108
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 9225,
+    "last_touched": "2026-06-14",
+    "commits_since": 47
+   }
+  ],
+  "merged_30d": null,
+  "file": "AGENTS.md",
+  "staleness": 108
+ },
+ {
+  "repo": "cline/cline",
+  "stars": 70108,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 5449,
+    "last_touched": "2026-09-30",
+    "commits_since": 88
+   }
+  ],
+  "merged_30d": 264,
+  "file": "AGENTS.md",
+  "staleness": 88
+ },
+ {
+  "repo": "biomejs/biome",
+  "stars": 25918,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 4521,
+    "last_touched": "2026-10-04",
+    "commits_since": 80
+   }
+  ],
+  "merged_30d": 296,
+  "file": "AGENTS.md",
+  "staleness": 80
+ },
+ {
+  "repo": "remix-run/react-router",
+  "stars": 56593,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 7415,
+    "last_touched": "2026-08-21",
+    "commits_since": 75
+   }
+  ],
+  "merged_30d": 39,
+  "file": "AGENTS.md",
+  "staleness": 75
+ },
+ {
+  "repo": "go-gitea/gitea",
+  "stars": 58409,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 2613,
+    "last_touched": "2026-10-01",
+    "commits_since": 73
+   }
+  ],
+  "merged_30d": 228,
+  "file": "AGENTS.md",
+  "staleness": 73
+ },
+ {
+  "repo": "rolldown/rolldown",
+  "stars": 13967,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 8441,
+    "last_touched": "2026-09-30",
+    "commits_since": 73
+   }
+  ],
+  "merged_30d": 184,
+  "file": "AGENTS.md",
+  "staleness": 73
+ },
+ {
+  "repo": "astral-sh/uv",
+  "stars": 90575,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 3505,
+    "last_touched": "2026-10-08",
+    "commits_since": 68
+   }
+  ],
+  "merged_30d": 512,
+  "file": "AGENTS.md",
+  "staleness": 68
+ },
+ {
+  "repo": "docling-project/docling",
+  "stars": 68633,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 4103,
+    "last_touched": "2026-10-06",
+    "commits_since": 65
+   }
+  ],
+  "merged_30d": 213,
+  "file": "AGENTS.md",
+  "staleness": 65
+ },
+ {
+  "repo": "electron/electron",
+  "stars": 123260,
+  "files": [
+   {
+    "file": "CLAUDE.md",
+    "bytes": 13960,
+    "last_touched": "2026-09-28",
+    "commits_since": 63
+   }
+  ],
+  "merged_30d": 814,
+  "file": "CLAUDE.md",
+  "staleness": 63
+ },
+ {
+  "repo": "lobehub/lobe-chat",
+  "stars": 83106,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 8611,
+    "last_touched": "2026-10-09",
+    "commits_since": 61
+   }
+  ],
+  "merged_30d": null,
+  "file": "AGENTS.md",
+  "staleness": 61
+ },
+ {
+  "repo": "facebook/docusaurus",
+  "stars": 66458,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 6311,
+    "last_touched": "2026-10-01",
+    "commits_since": 57
+   }
+  ],
+  "merged_30d": 116,
+  "file": "AGENTS.md",
+  "staleness": 57
+ },
+ {
+  "repo": "storybookjs/storybook",
+  "stars": 91217,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 3388,
+    "last_touched": "2026-10-08",
+    "commits_since": 54
+   }
+  ],
+  "merged_30d": 243,
+  "file": "AGENTS.md",
+  "staleness": 54
+ },
+ {
+  "repo": "eslint/eslint",
+  "stars": 27624,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 8242,
+    "last_touched": "2026-09-09",
+    "commits_since": 48
+   }
+  ],
+  "merged_30d": 40,
+  "file": "AGENTS.md",
+  "staleness": 48
+ },
+ {
+  "repo": "comfyanonymous/ComfyUI",
+  "stars": 136736,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 24870,
+    "last_touched": "2026-10-03",
+    "commits_since": 46
+   }
+  ],
+  "merged_30d": null,
+  "file": "AGENTS.md",
+  "staleness": 46
+ },
+ {
+  "repo": "tldraw/tldraw",
+  "stars": 50828,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 13436,
+    "last_touched": "2026-09-30",
+    "commits_since": 45
+   }
+  ],
+  "merged_30d": 239,
+  "file": "AGENTS.md",
+  "staleness": 45
+ },
+ {
+  "repo": "vitest-dev/vitest",
+  "stars": 17196,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 18319,
+    "last_touched": "2026-10-05",
+    "commits_since": 43
+   }
+  ],
+  "merged_30d": 130,
+  "file": "AGENTS.md",
+  "staleness": 43
+ },
+ {
+  "repo": "formbricks/formbricks",
+  "stars": 13080,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 34625,
+    "last_touched": "2026-10-06",
+    "commits_since": 42
+   }
+  ],
+  "merged_30d": 308,
+  "file": "AGENTS.md",
+  "staleness": 42
+ },
+ {
+  "repo": "astral-sh/ruff",
+  "stars": 49976,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 20391,
+    "last_touched": "2026-10-07",
+    "commits_since": 39
+   }
+  ],
+  "merged_30d": 414,
+  "file": "AGENTS.md",
+  "staleness": 39
+ },
+ {
+  "repo": "microsoft/playwright",
+  "stars": 97416,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 8028,
+    "last_touched": "2026-10-06",
+    "commits_since": 39
+   }
+  ],
+  "merged_30d": 262,
+  "file": "AGENTS.md",
+  "staleness": 39
+ },
+ {
+  "repo": "vercel/next.js",
+  "stars": 143101,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 28678,
+    "last_touched": "2026-10-09",
+    "commits_since": 34
+   }
+  ],
+  "merged_30d": 536,
+  "file": "AGENTS.md",
+  "staleness": 34
+ },
+ {
+  "repo": "n8n-io/n8n",
+  "stars": 206896,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 22418,
+    "last_touched": "2026-10-09",
+    "commits_since": 34
+   }
+  ],
+  "merged_30d": 1604,
+  "file": "AGENTS.md",
+  "staleness": 34
+ },
+ {
+  "repo": "gradio-app/gradio",
+  "stars": 43704,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 3799,
+    "last_touched": "2026-09-25",
+    "commits_since": 25
+   }
+  ],
+  "merged_30d": 64,
+  "file": "AGENTS.md",
+  "staleness": 25
+ },
+ {
+  "repo": "withastro/astro",
+  "stars": 63149,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 8925,
+    "last_touched": "2026-10-08",
+    "commits_since": 22
+   }
+  ],
+  "merged_30d": 196,
+  "file": "AGENTS.md",
+  "staleness": 22
+ },
+ {
+  "repo": "medusajs/medusa",
+  "stars": 36682,
+  "files": [
+   {
+    "file": "CLAUDE.md",
+    "bytes": 13821,
+    "last_touched": "2026-10-07",
+    "commits_since": 22
+   }
+  ],
+  "merged_30d": 189,
+  "file": "CLAUDE.md",
+  "staleness": 22
+ },
+ {
+  "repo": "PrefectHQ/prefect",
+  "stars": 24001,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 9565,
+    "last_touched": "2026-10-06",
+    "commits_since": 18
+   }
+  ],
+  "merged_30d": 129,
+  "file": "AGENTS.md",
+  "staleness": 18
+ },
+ {
+  "repo": "elysiajs/elysia",
+  "stars": 19229,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 2834,
+    "last_touched": "2026-07-27",
+    "commits_since": 10
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 2834,
+    "last_touched": "2026-07-27",
+    "commits_since": 10
+   }
+  ],
+  "merged_30d": 0,
+  "file": "AGENTS.md",
+  "staleness": 10
+ },
+ {
+  "repo": "activepieces/activepieces",
+  "stars": 24977,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 20228,
+    "last_touched": "2026-10-09",
+    "commits_since": 5
+   },
+   {
+    "file": "CLAUDE.md",
+    "bytes": 22626,
+    "last_touched": "2026-10-09",
+    "commits_since": 5
+   }
+  ],
+  "merged_30d": 484,
+  "file": "AGENTS.md",
+  "staleness": 5
+ },
+ {
+  "repo": "block/goose",
+  "stars": 55129,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 6212,
+    "last_touched": "2026-10-09",
+    "commits_since": 5
+   }
+  ],
+  "merged_30d": null,
+  "file": "AGENTS.md",
+  "staleness": 5
+ },
+ {
+  "repo": "outline/outline",
+  "stars": 40858,
+  "files": [
+   {
+    "file": "AGENTS.md",
+    "bytes": 7256,
+    "last_touched": "2026-10-10",
+    "commits_since": 3
+   }
+  ],
+  "merged_30d": 182,
+  "file": "AGENTS.md",
+  "staleness": 3
+ }
+]

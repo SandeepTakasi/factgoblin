@@ -1,0 +1,655 @@
+[
+ {
+  "repo": "securego/gosec",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "yanyiwu/nodejieba",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "Andersbakken/rtags",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": ".cpp"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "graphframes/graphframes",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "northword/zotero-format-metadata",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": "content/scripts/linter.js"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "Prismer-AI/Prismer",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "DamianB-BitFlipper/proton-drive-sync",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": ".js"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": ".ts"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": "logger.js"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "async/await"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "tovifun/VivalArc",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": "-cn.md"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "BrowserOperator/browser-operator-core",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "pktgen/Pktgen-DPDK",
+  "issues": [
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": ".md"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "purton-tech/rust-on-nails",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": "CONTRIBUTING.md"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "kousen/java_8_recipes",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "Shlomob/ocmonitor-share",
+  "issues": [
+   {
+    "file": "claude.md",
+    "tier": "dir",
+    "ref": "provider/model-id"
+   },
+   {
+    "file": "claude.md",
+    "tier": "dir",
+    "ref": "provider/model_id"
+   },
+   {
+    "file": "claude.md",
+    "tier": "dir",
+    "ref": "provider/normalize(model_id)"
+   },
+   {
+    "file": "claude.md",
+    "tier": "path",
+    "ref": "ui/table_builder.py"
+   },
+   {
+    "file": "claude.md",
+    "tier": "bare",
+    "ref": "generate_mock_data.py"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "topocm/topocm_content",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "hughjonesd/huxtable",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "TornLux/UnrealBridge",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "aashaexo/soundshuman",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "GoogleContainerTools/config-sync",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "cmd",
+    "ref": "make install-kind",
+    "why": "no 'install-kind' target found"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "haddocking/haddock3",
+  "issues": [
+   {
+    "file": "CLAUDE.md",
+    "tier": "path",
+    "ref": "docs/CNS.md"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": ".ipynb"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": ".py"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "dir",
+    "ref": "notebooks/__marimo__"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "path",
+    "ref": "docs/architecture.md"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "narnia-sh/layrr",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "kantord/headson",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "semos-labs/attyx",
+  "issues": [
+   {
+    "file": "CLAUDE.md",
+    "tier": "path",
+    "ref": "releases/v0.1.45.md"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "lexler/skill-factory",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "malforge/mdk2",
+  "issues": [],
+  "group": "small"
+ },
+ {
+  "repo": "Niall-Young/Canvasight",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "ui/message"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "turn/start"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "Niall-Young/Canvasight"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "tools/list"
+   }
+  ],
+  "group": "small"
+ },
+ {
+  "repo": "PostHog/posthog",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "actions/setup-node"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "PostHog/posthog"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "PostHog/posthog-private"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "minio/minio"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "lib/dayjs"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "react/forbid-dom-props"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": ".test.ts"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": ".serial.test.ts"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "lib/api"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": "products/conversations/skills/organizing-conversations-code/SKILL.md"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "PostHog/ai-gateway"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "TanStack/router",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": ".agents/skills/bundle-size-optimization/SKILL.md"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "apache/airflow",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": "tests/cli/test_cli_parser.py"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "astral-sh/ruff",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "astral-sh/uv",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "biomejs/biome",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "cmd",
+    "ref": "just gen-grammar <lang>",
+    "why": "no 'gen-grammar' target found"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "cmd",
+    "ref": "just gen-formatter --allow-dirty",
+    "why": "no 'gen-formatter' target found"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "calcom/cal.com",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": "packages/features/ee/workflows/lib/constants.ts"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "cloudflare/workers-sdk",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "workers-sdk/no-unsafe-command-execution"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": ".github/PULL_REQUEST_TEMPLATE.md"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "denoland/deno",
+  "issues": [
+   {
+    "file": "CLAUDE.md",
+    "tier": "dir",
+    "ref": "feature/new-cli-command"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": "stdarg.h"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "excalidraw/excalidraw",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "facebook/react",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "getsentry/sentry",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "grafana/grafana",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": "grafana-enterprise/AGENTS.md"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "huggingface/transformers",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "langchain-ai/langchain",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "langchain-ai/langchain-google"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "langchain-ai/langchain-aws"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "ncipollo/release-action"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "mastra-ai/mastra",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "microsoft/playwright",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "microsoft/vscode",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "modelcontextprotocol/typescript-sdk",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "n8n-io/n8n",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "oven-sh/bun",
+  "issues": [
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": ".d.ts"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": ".rs"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": ".cpp"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": ".classes.ts"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "dir",
+    "ref": "src/shell"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "dir",
+    "ref": "src/bake"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": ".test.ts"
+   },
+   {
+    "file": "CLAUDE.md",
+    "tier": "bare",
+    "ref": ".test.tsx"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "prisma/prisma",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": ".md"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "supabase/supabase",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "ui-patterns/AssistantChat"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": "supabase/functions/common/database-types.ts"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "sveltejs/svelte",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "vercel/ai",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": "src/stream-text/openai.ts"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": "kebab-case.ts"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": "kebab-case.test.ts"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": "kebab-case.test-d.ts"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "bare",
+    "ref": "kebab-case.tsx"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "ai-sdk/require-validate-url"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "vercel/next.js",
+  "issues": [
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": "turbopack/crates/README.md"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "path",
+    "ref": "vercel/next.js"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": ".husky/post-checkout"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "releases/lts/active"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "releases/lts/maintenance"
+   },
+   {
+    "file": "AGENTS.md",
+    "tier": "dir",
+    "ref": "if/else"
+   }
+  ],
+  "group": "big"
+ },
+ {
+  "repo": "withastro/astro",
+  "issues": [],
+  "group": "big"
+ },
+ {
+  "repo": "zed-industries/zed",
+  "issues": [],
+  "group": "big"
+ }
+]

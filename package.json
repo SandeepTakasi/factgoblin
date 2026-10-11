@@ -1,0 +1,23 @@
+{
+  "name": "agent-drift",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Finds claims in agent instruction files (AGENTS.md, CLAUDE.md, skills, rules) that no longer match the code, with evidence and a fix.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "bin": {
+    "agent-drift": "src/cli.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc",
+    "audit": "node src/cli.ts audit",
+    "bench": "node src/cli.ts bench"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,484 @@
+{
+ "description": "Hand-verified ground truth from the 2026-10-10 agent-instruction rot research. 'stale' = verified against the code at the pinned commit. 'not_stale' = a plausible-looking finding that was rejected on verification (false-positive traps). 'clean_files' = files audited with no stale claims found. Severity: high = silently produces wrong work; medium = fails loudly; low = harmless/cosmetic. Verified by: claude (direct code check) or agent (sub-agent audit, not independently re-checked).",
+ "repos": {
+  "denoland/deno": "a18ce33715e30cd2b0d99c7e322ef11a65490e4d",
+  "malforge/mdk2": "04c09c735a1514c83b587c7847d649a518baa52b",
+  "getsentry/sentry": "035fd0e68c0a85be84eabe7c5cacbd88d9ae065e",
+  "grafana/grafana": "df53a3d5f66602b584c4dbfae012608d34f35a21",
+  "cloudflare/workers-sdk": "fcf625da014474f656a962b9313dec54563f3573",
+  "TanStack/router": "f6d21de12b69781738c96cfa3b468fa65294e0ef",
+  "GoogleContainerTools/config-sync": "ada1892e9f506bb24beda67653787003f6aa0cc8",
+  "hughjonesd/huxtable": "a0e3fc2ac9334be1d32a11cdb250741c0a8a9d80",
+  "TornLux/UnrealBridge": "2db23b5806a2ad3f3106546d01ef70ed3545377a",
+  "kousen/java_8_recipes": "1ac73b3031c73e8e03e09d166be62cc38512aa72",
+  "vercel/ai": "5a3c13cbb00de3b641af7b34bded5cfeaef286d5",
+  "pnpm/pnpm": "5804cae798b6ad9d40569bff30fd340896c2fef2",
+  "metabase/metabase": "59d66520f2e5ae542727c74a75638760cc69ee38",
+  "nrwl/nx": "200edc8fb5c0ec17825c8d511c8b3ac66e66e8e8",
+  "langfuse/langfuse": "35d16971a3f83256d33f846b85dbff8c2d5c4d77",
+  "vllm-project/vllm": "2bea22002d66a6c89d208fa682b40a89538f023c",
+  "nodejs/node": "8c1a7d3172399a1bedc313c92016b5651a28aaa3",
+  "sst/opencode": "055d95bb7e278c94baf06235a52cac79dd13ba67",
+  "QwenLM/qwen-code": "df72e2d12589b77a469180ef2b7a6fffa508aaab",
+  "twentyhq/twenty": "640b8ff0e9dc5007edcd8d486223446e855c6b50"
+ },
+ "stale": [
+  {
+   "repo": "denoland/deno",
+   "file": "CLAUDE.md",
+   "line": 49,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "Flag parsing is in cli/args/flags.rs",
+   "evidence": "Parser moved to deno_cli_parser crate (libs/cli_parser/src/{defs,flags,convert}.rs); cli/args/flags.rs re-exports it.",
+   "merged_fix": false
+  },
+  {
+   "repo": "denoland/deno",
+   "file": "CLAUDE.md",
+   "line": 268,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "New subcommand: define command structure in cli/args/flags.rs",
+   "evidence": "DenoSubcommand enum is libs/cli_parser/src/flags.rs:786; definitions in defs.rs; parsing in convert.rs."
+  },
+  {
+   "repo": "denoland/deno",
+   "file": "CLAUDE.md",
+   "line": 271,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "Wire new subcommand up in cli/main.rs (entry point + routing)",
+   "evidence": "cli/main.rs is a 9-line shim calling deno::main(); routing is run_subcommand in cli/lib.rs:124."
+  },
+  {
+   "repo": "denoland/deno",
+   "file": "CLAUDE.md",
+   "line": 147,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "`cargo test --bin deno` runs just the CLI integration tests",
+   "evidence": "Binary target has no tests; integration tests are [[test]] integration in tests/integration (package integration_tests). Runs zero tests."
+  },
+  {
+   "repo": "denoland/deno",
+   "file": "CLAUDE.md",
+   "line": 153,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "`cargo test spec::test_name` runs a specific spec test",
+   "evidence": "Spec tests are named specs::<category>::<test> (tests/specs/README.md:19); 'spec::' is not a substring, filter matches nothing and exits success."
+  },
+  {
+   "repo": "denoland/deno",
+   "file": "CLAUDE.md",
+   "line": 169,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "`cargo test unit_node::crypto_test` example",
+   "evidence": "No tests/unit_node/crypto_test.ts; crypto tests are under tests/unit_node/crypto/."
+  },
+  {
+   "repo": "denoland/deno",
+   "file": "CLAUDE.md",
+   "line": 347,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "runtime/permissions.rs is the permission system",
+   "evidence": "2-line re-export; the system is runtime/permissions/ (deno_permissions crate)."
+  },
+  {
+   "repo": "denoland/deno",
+   "file": "CLAUDE.md",
+   "line": 68,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "protobuf is a build prerequisite",
+   "evidence": ".github/CONTRIBUTING.md doesn't list it; prost-build is declared in workspace Cargo.toml but unused and absent from Cargo.lock."
+  },
+  {
+   "repo": "malforge/mdk2",
+   "file": "AGENTS.md",
+   "line": 72,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "mdk.exe has restore/pack commands",
+   "evidence": "Verb enum is None/Help/Pack only; HelpSystemTests asserts 'restore' throws; removed in Mdk.CommandLine 2.2.0-pre.5. Also stated in .claude/skills/debugging-mdk and mdk-architecture skills and .github/debugging-mdk.md.",
+   "merged_fix": true
+  },
+  {
+   "repo": "malforge/mdk2",
+   "file": "AGENTS.md",
+   "line": 96,
+   "severity": "medium",
+   "verified_by": "claude",
+   "claim": "MSBuild integration includes an MdkRestore target",
+   "evidence": "Packager .props define only MdkPack and MdkDidNotPack; references come from Mal.Mdk2.References SpaceEngineers target.",
+   "merged_fix": true
+  },
+  {
+   "repo": "malforge/mdk2",
+   "file": "AGENTS.md",
+   "line": 52,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "MDK-Complete.slnx builds generators",
+   "evidence": "Neither .slnx contains a generator project; only test data Issue139.Generator exists.",
+   "merged_fix": true
+  },
+  {
+   "repo": "getsentry/sentry",
+   "file": "AGENTS.md",
+   "line": 48,
+   "severity": "medium",
+   "verified_by": "claude",
+   "claim": "Run a single ruff hook with `prek run -q ruff --files ...`",
+   "evidence": ".pre-commit-config.yaml hook ids are ruff-check and ruff-format; no 'ruff' id."
+  },
+  {
+   "repo": "grafana/grafana",
+   "file": "AGENTS.md",
+   "line": 142,
+   "severity": "medium",
+   "verified_by": "claude",
+   "claim": "loki is a built-in plugin workspace",
+   "evidence": "No loki dir under public/app/plugins/datasource; workspaces are azuremonitor, cloudwatch, grafana-testdata-datasource, graphite."
+  },
+  {
+   "repo": "grafana/grafana",
+   "file": "AGENTS.md",
+   "line": 134,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "@grafana/scenes is a shared package in packages/",
+   "evidence": "No scenes package in packages/; @grafana/scenes is an external npm dependency."
+  },
+  {
+   "repo": "cloudflare/workers-sdk",
+   "file": "AGENTS.md",
+   "line": 144,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "Use .github/PULL_REQUEST_TEMPLATE.md",
+   "evidence": "Actual file is lowercase .github/pull_request_template.md (case-sensitive FS miss)."
+  },
+  {
+   "repo": "hughjonesd/huxtable",
+   "file": "AGENTS.md",
+   "line": 6,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "agent-notes.md at repo root",
+   "evidence": "Only docs/agent-notes.md exists."
+  },
+  {
+   "repo": "hughjonesd/huxtable",
+   "file": "AGENTS.md",
+   "line": 38,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "test-zz-fuzz.R exists (skip slow fuzz tests)",
+   "evidence": "No fuzz test file anywhere under tests/."
+  },
+  {
+   "repo": "hughjonesd/huxtable",
+   "file": "AGENTS.md",
+   "line": 63,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "Building vignettes requires R.rsp",
+   "evidence": "DESCRIPTION: VignetteBuilder knitr only; no R.rsp anywhere but AGENTS.md."
+  },
+  {
+   "repo": "TornLux/UnrealBridge",
+   "file": "CLAUDE.md",
+   "line": 82,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "Server uses a __UB_ERR__ sentinel",
+   "evidence": "Now a base64 envelope __UB_B64__...__UB_END__ (UnrealBridgeServer.cpp)."
+  },
+  {
+   "repo": "TornLux/UnrealBridge",
+   "file": "CLAUDE.md",
+   "line": 93,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "GameplayAbilityLibrary is an introspection scaffold",
+   "evidence": "Header declares 54 UFUNCTIONs including authoring ops."
+  },
+  {
+   "repo": "TornLux/UnrealBridge",
+   "file": "CLAUDE.md",
+   "line": 140,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "Module Type is \"Editor\"",
+   "evidence": ".uplugin declares EditorNoCommandlet."
+  },
+  {
+   "repo": "kousen/java_8_recipes",
+   "file": "CLAUDE.md",
+   "line": 13,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "Build tool is Gradle 8.14.2 (latest stable)",
+   "evidence": "gradle-wrapper.properties points to gradle-9.8.0."
+  },
+  {
+   "repo": "kousen/java_8_recipes",
+   "file": "CLAUDE.md",
+   "line": 144,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "Set wrapper to 8.14.2 as latest",
+   "evidence": "Repo already on 9.8.0; following it downgrades."
+  },
+  {
+   "repo": "vercel/ai",
+   "file": "AGENTS.md",
+   "line": 102,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "generateObject / streamObject are the core structured-output APIs",
+   "evidence": "Both @deprecated in packages/ai/src/generate-object/ ('Use generateText/streamText with an output setting'); docs teach Output.object()."
+  },
+  {
+   "repo": "vercel/ai",
+   "file": "AGENTS.md",
+   "line": 27,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "examples/ includes next-openai",
+   "evidence": "No examples/next-openai; Next examples are next, next-openai-pages, etc."
+  },
+  {
+   "repo": "pnpm/pnpm",
+   "file": "AGENTS.md",
+   "line": 46,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "pnpm11/pkg-manager/ holds core install/linking logic",
+   "evidence": "Only orphaned test fixtures; not in pnpm-workspace.yaml; logic is in pnpm11/installing and pnpm11/bins.",
+   "merged_fix": true
+  },
+  {
+   "repo": "pnpm/pnpm",
+   "file": "AGENTS.md",
+   "line": 162,
+   "severity": "medium",
+   "verified_by": "claude",
+   "claim": "Search shared dirs packages/, fs/, crypto/, text/",
+   "evidence": "No packages/ dir; others exist only under pnpm11/.",
+   "merged_fix": true
+  },
+  {
+   "repo": "pnpm/pnpm",
+   "file": "AGENTS.md",
+   "line": 394,
+   "severity": "medium",
+   "verified_by": "claude",
+   "claim": "Config flows through @pnpm/config",
+   "evidence": "No such package; it is @pnpm/config.reader.",
+   "merged_fix": true
+  },
+  {
+   "repo": "metabase/metabase",
+   "file": "CLAUDE.md",
+   "line": 53,
+   "severity": "medium",
+   "verified_by": "claude",
+   "claim": "Example: ./bin/test-agent :module enterprise/workspaces (also line 56 with --drivers)",
+   "evidence": "Module removed (not in config.edn, no src/test dirs, migration 20260610_remove_workspaces_permission.yaml); module-folders doesn't check existence."
+  },
+  {
+   "repo": "nrwl/nx",
+   "file": "AGENTS.md",
+   "line": 85,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "nx prepush is the full validation suite and ensures code passes all tests (same text in CLAUDE.md)",
+   "evidence": "Root project.json prepush dependsOn only format-native, lint-native, check-commit, check-format:quick, check-lock-files, astro-docs:format. No tests."
+  },
+  {
+   "repo": "nrwl/nx",
+   "file": "AGENTS.md",
+   "line": 76,
+   "severity": "medium",
+   "verified_by": "agent",
+   "claim": "Formatting step is `npx oxfmt FILE_NAME` (incl. for .mdoc docs)",
+   "evidence": "oxfmt skips .mdoc; docs need astro-docs:format:write. CLAUDE.md already has the note, AGENTS.md drifted."
+  },
+  {
+   "repo": "langfuse/langfuse",
+   "file": ".agents/AGENTS.md",
+   "line": 115,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "ee/ is the Enterprise package consumed by web; web -> @langfuse/ee",
+   "evidence": "web/package.json has no @langfuse/ee; nothing in web/worker/packages imports it; EE code in web/src/ee and packages/shared/src/server/ee."
+  },
+  {
+   "repo": "vllm-project/vllm",
+   "file": "AGENTS.md",
+   "line": 77,
+   "severity": "medium",
+   "verified_by": "claude",
+   "claim": "Install test deps with `uv pip install -r requirements/test/cuda.in` (comment: use cuda.in on non-x86_64)",
+   "evidence": "Comment and command contradict; cuda.txt is the pinned x86_64 lock used by CI and dev.txt. Silently installs unpinned deps."
+  },
+  {
+   "repo": "twentyhq/twenty",
+   "file": "CLAUDE.md",
+   "line": 3,
+   "severity": "medium",
+   "verified_by": "agent",
+   "claim": "twenty-front uses React 18",
+   "evidence": "react ^19.2.0 across packages."
+  },
+  {
+   "repo": "twentyhq/twenty",
+   "file": "CLAUDE.md",
+   "line": 35,
+   "severity": "medium",
+   "verified_by": "agent",
+   "claim": "`npx nx fmt <pkg>` formats",
+   "evidence": "targetDefaults.fmt runs oxfmt --check (check only); writing needs --configuration=fix."
+  },
+  {
+   "repo": "twentyhq/twenty",
+   "file": "CLAUDE.md",
+   "line": 29,
+   "severity": "medium",
+   "verified_by": "agent",
+   "claim": "Single tests run with jest --config=packages/<pkg>/jest.config.mjs (twenty-ui is the vitest exception)",
+   "evidence": "twenty-sdk, twenty-cli are vitest-only with no jest config."
+  },
+  {
+   "repo": "grafana/grafana",
+   "file": "AGENTS.md",
+   "line": 167,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "GCC required for CGo/SQLite compilation of the backend",
+   "evidence": "Only SQLite driver is pkg/util/sqlite/sqlite_nocgo.go using pure-Go modernc.org/sqlite; mattn/go-sqlite3 not imported; .air.toml builds with CGO_ENABLED=0.",
+   "source": "found by agent-drift bench run 1, not by the manual audit"
+  },
+  {
+   "repo": "langfuse/langfuse",
+   "file": ".agents/AGENTS.md",
+   "line": 122,
+   "severity": "high",
+   "verified_by": "claude",
+   "claim": "Dependency direction: web -> @langfuse/shared, @langfuse/ee",
+   "evidence": "web/package.json has no @langfuse/ee; nothing in web/ imports it (same rot as line 115).",
+   "source": "agent-drift bench run 1"
+  },
+  {
+   "repo": "langfuse/langfuse",
+   "file": ".agents/AGENTS.md",
+   "line": 270,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "Don't hand-edit packages/shared/prisma/generated/*",
+   "evidence": "schema.prisma has one prisma-client-js generator with no output path; packages/shared/prisma/generated has no tracked files.",
+   "source": "agent-drift bench run 1"
+  },
+  {
+   "repo": "metabase/metabase",
+   "file": "CLAUDE.md",
+   "line": 56,
+   "severity": "medium",
+   "verified_by": "claude",
+   "claim": "Example: ./bin/test-agent --drivers=mysql,h2,postgres :module enterprise/workspaces",
+   "evidence": "Same removed module as line 53."
+  },
+  {
+   "repo": "kousen/java_8_recipes",
+   "file": "CLAUDE.md",
+   "line": 169,
+   "severity": "low",
+   "verified_by": "claude",
+   "claim": "Migration guide: uses: actions/setup-java@v1 for JDK 17",
+   "evidence": ".github/workflows/gradle.yml uses actions/setup-java@v4; following the guide downgrades the action.",
+   "source": "agent-drift bench run 2"
+  }
+ ],
+ "not_stale": [
+  {
+   "repo": "GoogleContainerTools/config-sync",
+   "file": "AGENTS.md",
+   "line": 41,
+   "trap": "mechanical",
+   "claim": "`make install-kind`",
+   "why_rejected": "Target is generated by the go_install Makefile macro (Makefile:273/466); regex target scan missed it."
+  },
+  {
+   "repo": "GoogleContainerTools/config-sync",
+   "file": "AGENTS.md",
+   "line": 14,
+   "trap": "ambiguous_wording",
+   "claim": "Admission webhook validates changes for Config Sync custom resources",
+   "why_rejected": "Plausible reading: resources managed by Config Sync. Not concretely contradicted."
+  },
+  {
+   "repo": "sst/opencode",
+   "file": "AGENTS.md",
+   "line": 29,
+   "trap": "style_preference",
+   "claim": "Use Bun APIs when possible, like Bun.file()",
+   "why_rejected": "Bun.file still used in 67 files in packages/opencode; migration spec only removes it 'where inappropriate'. Maintainer preference, not a fact."
+  },
+  {
+   "repo": "metabase/metabase",
+   "file": "CLAUDE.md",
+   "line": 54,
+   "trap": "alias_resolution",
+   "claim": "./bin/test-agent :modules '[sql-parsing query-processor]'",
+   "why_rejected": "Module renamed to sql-tools.parsing but default ns-prefix for 'sql-parsing' still resolves to test/metabase/sql_parsing, so the command works."
+  },
+  {
+   "repo": "TanStack/router",
+   "file": "AGENTS.md",
+   "line": 38,
+   "trap": "symlink",
+   "claim": ".agents/skills/bundle-size-optimization/SKILL.md exists",
+   "why_rejected": "Path is a symlink to ../../skills/bundle-size-optimization; mechanical tree listing didn't resolve it."
+  },
+  {
+   "repo": "twentyhq/twenty",
+   "file": "CLAUDE.md",
+   "line": 0,
+   "trap": "mechanical",
+   "claim": "Paths written as placeholders/examples (e.g. kebab-case.ts, owner/repo, async/await, releases/v0.1.45.md 'e.g.')",
+   "why_rejected": "Generic class of false positives from regex extraction across many repos: placeholders, naming-convention examples, GitHub owner/repo names, prose with slashes, 'do not create X' examples, generated/build outputs, files in other repos."
+  },
+  {
+   "repo": "getsentry/sentry",
+   "file": "AGENTS.md",
+   "line": 111,
+   "trap": "runtime_installed",
+   "claim": "Workflow skills (commit, pre-commit, hybrid cloud) live in .agents/skills/",
+   "why_rejected": "commit/pre-commit skills are installed at runtime from getsentry/skills via agents.toml and gitignored, so they exist on a dev machine but not in git.",
+   "source": "false positive from agent-drift bench run 2"
+  }
+ ],
+ "clean_files": [
+  {
+   "repo": "TanStack/router",
+   "file": "AGENTS.md",
+   "claims_checked": 22
+  },
+  {
+   "repo": "GoogleContainerTools/config-sync",
+   "file": "AGENTS.md",
+   "claims_checked": 22
+  },
+  {
+   "repo": "nodejs/node",
+   "file": "AGENTS.md",
+   "claims_checked": 9
+  }
+ ],
+ "audit_cost": "Sub-agent audit: ~65k-125k tokens and 45s-6.5min per file with a general-purpose model doing grep/read. Roughly 1/3 of sub-agent WRONG calls were rejected or downgraded on human verification."
+}
