@@ -83,6 +83,7 @@ async function bench() {
     '',
     `Precision on labeled medium/high findings: ${pct(sum.precisionLabeled)} (${sum.tp} correct, ${sum.fpTrap} hit a known false-positive trap)`,
     `Recall of labeled high-severity rot: ${pct(sum.recallHigh)} (${sum.highFound}/${sum.highLabels})`,
+    `Recall of labeled medium+high rot: ${pct(sum.recallMediumHigh)} (${sum.mediumHighFound}/${sum.mediumHighLabels})`,
     `Unlabeled medium/high findings needing human review: ${sum.unlabeled}`,
     `Cost: $${cost.toFixed(2)}`,
     `Gate (precision ≥90%, high recall ≥70%): ${(sum.precisionLabeled ?? 0) >= 0.9 && (sum.recallHigh ?? 0) >= 0.7 ? 'PASS' : 'FAIL'}`,

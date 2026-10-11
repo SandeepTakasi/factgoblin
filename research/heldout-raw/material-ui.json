@@ -1,0 +1,524 @@
+{
+ "repo": "mui/material-ui",
+ "file": "AGENTS.md",
+ "claims": [
+  {
+   "line": 7,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 7",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 10,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 10",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 11,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 11",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 21,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 21",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 22,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 22",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 28,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 28",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 29,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 29",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 35,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 35",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 36,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 36",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 37,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 37",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 38,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 38",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 39,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 39",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 40,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 40",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 46,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 46",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 47,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 47",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 48,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 48",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 56,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 56",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 61,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 61",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 64,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 64",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 69,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 69",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 71,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 71",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 72,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 72",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 73,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 73",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 74,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 74",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 75,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 75",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 76,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 76",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 84,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 84",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 85,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 85",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 86,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 86",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 100,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 100",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 106,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 106",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 120,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 120",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 127,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 127",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 129,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 129",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 130,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 130",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 131,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 131",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 137,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 137",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 138,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 138",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 139,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 139",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 140,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 140",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 141,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 141",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 144,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 144",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 164,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 164",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 168,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 168",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 169,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 169",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 170,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 170",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 176,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 176",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 177,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 177",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 183,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 183",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 186,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 186",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 188,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 188",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 192,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 192",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 195,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 195",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 200,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 200",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 207,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 207",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 213,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 213",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 217,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 217",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 218,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 218",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 219,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 219",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 220,
+   "quote": "",
+   "claim": "mui/material-ui AGENTS.md claim at line 220",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 78,
+   "quote": "",
+   "claim": "@mui/internal-* packages are not published",
+   "verdict": "stale",
+   "severity": "low",
+   "evidence": "packages-internal/{api-docs-builder,core-docs,docs-utils,markdown,scripts} have publishConfig.access public."
+  },
+  {
+   "line": 128,
+   "quote": "",
+   "claim": "Component implementation is Button.tsx",
+   "verdict": "stale",
+   "severity": "medium",
+   "evidence": "packages/mui-material/src/Button/ has Button.js (+ .d.ts), no Button.tsx."
+  },
+  {
+   "line": 132,
+   "quote": "",
+   "claim": "Public exports are in index.ts",
+   "verdict": "stale",
+   "severity": "low",
+   "evidence": "Button/ has index.js + index.d.ts."
+  },
+  {
+   "line": 232,
+   "quote": "",
+   "claim": "pnpm vale <files> checks prose",
+   "verdict": "stale",
+   "severity": "medium",
+   "evidence": "No vale script; only valelint and vale:fix."
+  }
+ ],
+ "reviewed": {
+  "78": "confirmed",
+  "128": "confirmed",
+  "132": "confirmed",
+  "232": "confirmed"
+ }
+}

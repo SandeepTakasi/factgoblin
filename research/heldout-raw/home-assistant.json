@@ -1,0 +1,151 @@
+{
+ "repo": "home-assistant/core",
+ "file": "AGENTS.md",
+ "claims": [
+  {
+   "line": 3,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 3",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 11,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 11",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 16,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 16",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 17,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 17",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 18,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 18",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 19,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 19",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 23,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 23",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 24,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 24",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 25,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 25",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 29,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 29",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 30,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 30",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 32,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 32",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 33,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 33",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 35,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 35",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 36,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 36",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 41,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 41",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 48,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 48",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 52,
+   "quote": "",
+   "claim": "home-assistant/core AGENTS.md claim at line 52",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  }
+ ],
+ "reviewed": {}
+}

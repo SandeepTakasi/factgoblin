@@ -71,7 +71,9 @@ export function score(corpus: Corpus, repo: string, result: AuditResult): Score 
     let best: (typeof labels)[number] | undefined;
     for (const x of labels) {
       const d = Math.abs(x.l.line - finding.claim.line);
-      if (sameFile(x.l.file, finding.claim.file) && d <= LINE_TOLERANCE && (!best || d < Math.abs(best.l.line - finding.claim.line))) best = x;
+      // Exhaustively audited "verified_true" labels are dense and exact: only match the same line ±1.
+      const tolerance = (x.l as { trap?: string }).trap === 'verified_true' ? 1 : LINE_TOLERANCE;
+      if (sameFile(x.l.file, finding.claim.file) && d <= tolerance && (!best || d < Math.abs(best.l.line - finding.claim.line))) best = x;
     }
     if (!best) return { finding, outcome: 'unlabeled' };
     matched.add(best.l);
@@ -89,6 +91,9 @@ export interface Summary {
   recallHigh: number | null;
   highLabels: number;
   highFound: number;
+  recallMediumHigh: number | null;
+  mediumHighLabels: number;
+  mediumHighFound: number;
 }
 
 export function summarize(corpus: Corpus, scores: { repo: string; score: Score }[]): Summary {
@@ -99,6 +104,8 @@ export function summarize(corpus: Corpus, scores: { repo: string; score: Score }
   const highLabels = corpus.stale.filter((l) => l.severity === 'high' && audited.has(l.repo));
   const missed = new Set(scores.flatMap((s) => s.score.missed));
   const highFound = highLabels.filter((l) => !missed.has(l)).length;
+  const mhLabels = corpus.stale.filter((l) => l.severity !== 'low' && audited.has(l.repo));
+  const mhFound = mhLabels.filter((l) => !missed.has(l)).length;
   return {
     tp,
     fpTrap,
@@ -107,5 +114,8 @@ export function summarize(corpus: Corpus, scores: { repo: string; score: Score }
     recallHigh: highLabels.length ? highFound / highLabels.length : null,
     highLabels: highLabels.length,
     highFound,
+    recallMediumHigh: mhLabels.length ? mhFound / mhLabels.length : null,
+    mediumHighLabels: mhLabels.length,
+    mediumHighFound: mhFound,
   };
 }

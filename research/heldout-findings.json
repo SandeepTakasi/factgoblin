@@ -1,0 +1,2974 @@
+{
+ "description": "HELD-OUT set: labeled before agent-drift ever ran on these repos. Same schema as labeled-findings.json; not_stale entries with trap 'verified_true' are claims checked and found true.",
+ "repos": {
+  "docling-project/docling": "21588f5261d0a5a051102356d9babb35e790f33e",
+  "payloadcms/payload": "b103a85100b49dd72ec79b76cda310a3d0f1c108",
+  "outline/outline": "a8ced149ac041facf2835ad6f3cf90f9e000b5a3",
+  "streamlit/streamlit": "d54a3f557f6e4bc77c2a09f06fe1e38e31ac44ea",
+  "mui/material-ui": "41c9cb4030274f3bde585d136949f447674e728b",
+  "zed-industries/zed": "93d745668805029476e6d7fbb19652116fed51de",
+  "home-assistant/core": "c695f08248b6da7feaf94b8c7ec129a641b1b476"
+ },
+ "stale": [
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 78,
+   "claim": "@mui/internal-* packages are not published",
+   "severity": "low",
+   "verified_by": "claude",
+   "evidence": "packages-internal/{api-docs-builder,core-docs,docs-utils,markdown,scripts} have publishConfig.access public."
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 128,
+   "claim": "Component implementation is Button.tsx",
+   "severity": "medium",
+   "verified_by": "claude",
+   "evidence": "packages/mui-material/src/Button/ has Button.js (+ .d.ts), no Button.tsx."
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 132,
+   "claim": "Public exports are in index.ts",
+   "severity": "low",
+   "verified_by": "claude",
+   "evidence": "Button/ has index.js + index.d.ts."
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 232,
+   "claim": "pnpm vale <files> checks prose",
+   "severity": "medium",
+   "verified_by": "claude",
+   "evidence": "No vale script; only valelint and vale:fix."
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 64,
+   "claim": "TypeScript: Use strict mode",
+   "severity": "low",
+   "verified_by": "claude",
+   "evidence": "tsconfig.json has \"strict\": false; only noImplicitAny/strictNullChecks/alwaysStrict enabled."
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 123,
+   "claim": "RESTful endpoints under /api/",
+   "severity": "low",
+   "verified_by": "claude",
+   "evidence": "API is RPC-style POST endpoints (server/routes/api/documents/documents.ts documents.info); file line 1 itself says RPC."
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 30,
+   "claim": "Codebase is Payload 3.x",
+   "severity": "low",
+   "verified_by": "claude",
+   "evidence": "packages/payload version 4.0.0-beta.0."
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 32,
+   "claim": "Database adapters use Drizzle under the hood",
+   "severity": "low",
+   "verified_by": "claude",
+   "evidence": "db-mongodb uses mongoose 9.9.2; only SQL adapters use drizzle."
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 120,
+   "claim": "Disable auto-login with --no-auto-login or PAYLOAD_PUBLIC_DISABLE_AUTO_LOGIN=false",
+   "severity": "high",
+   "verified_by": "claude",
+   "evidence": "No CLI parses --no-auto-login (disableAutoLogin is only a config option); buildConfigWithDefaults.ts:182 disables only when the env var === \"true\", so =false leaves it on."
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 121,
+   "claim": "Default database is in-memory MongoDB",
+   "severity": "medium",
+   "verified_by": "claude",
+   "evidence": "test/dbAdapters.ts uses docker-hosted mongodb (replicaSet rs0); no memory server."
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 272,
+   "claim": "cd packages/richtext-lexical && pnpm run translateNewKeys",
+   "severity": "medium",
+   "verified_by": "claude",
+   "evidence": "richtext-lexical package.json has no translateNewKeys script."
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 369,
+   "claim": "pnpm run lint runs all linters including stylelint",
+   "severity": "high",
+   "verified_by": "claude",
+   "evidence": "lint = turbo run lint -> packages run eslint only; stylelint only in root lint:css."
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 166,
+   "claim": "Generate investigation prompt from crash: script/crash-to-prompt <issue-id>",
+   "severity": "medium",
+   "verified_by": "claude",
+   "evidence": "No script/crash-to-prompt in the repo (script/sentry-fetch exists); the only reference is .rules:166."
+  }
+ ],
+ "not_stale": [
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 14,
+   "claim": "docling AGENTS.md claim at line 14",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 15,
+   "claim": "docling AGENTS.md claim at line 15",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 16,
+   "claim": "docling AGENTS.md claim at line 16",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 21,
+   "claim": "docling AGENTS.md claim at line 21",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 22,
+   "claim": "docling AGENTS.md claim at line 22",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 23,
+   "claim": "docling AGENTS.md claim at line 23",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 24,
+   "claim": "docling AGENTS.md claim at line 24",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 25,
+   "claim": "docling AGENTS.md claim at line 25",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 26,
+   "claim": "docling AGENTS.md claim at line 26",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 27,
+   "claim": "docling AGENTS.md claim at line 27",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 33,
+   "claim": "docling AGENTS.md claim at line 33",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 34,
+   "claim": "docling AGENTS.md claim at line 34",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 36,
+   "claim": "docling AGENTS.md claim at line 36",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 37,
+   "claim": "docling AGENTS.md claim at line 37",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 40,
+   "claim": "docling AGENTS.md claim at line 40",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 41,
+   "claim": "docling AGENTS.md claim at line 41",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 43,
+   "claim": "docling AGENTS.md claim at line 43",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 44,
+   "claim": "docling AGENTS.md claim at line 44",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 49,
+   "claim": "docling AGENTS.md claim at line 49",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 50,
+   "claim": "docling AGENTS.md claim at line 50",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 51,
+   "claim": "docling AGENTS.md claim at line 51",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 52,
+   "claim": "docling AGENTS.md claim at line 52",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 57,
+   "claim": "docling AGENTS.md claim at line 57",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 58,
+   "claim": "docling AGENTS.md claim at line 58",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 62,
+   "claim": "docling AGENTS.md claim at line 62",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 71,
+   "claim": "docling AGENTS.md claim at line 71",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 76,
+   "claim": "docling AGENTS.md claim at line 76",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "docling-project/docling",
+   "file": "AGENTS.md",
+   "line": 78,
+   "claim": "docling AGENTS.md claim at line 78",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 3,
+   "claim": "home-assistant/core AGENTS.md claim at line 3",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 11,
+   "claim": "home-assistant/core AGENTS.md claim at line 11",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 16,
+   "claim": "home-assistant/core AGENTS.md claim at line 16",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 17,
+   "claim": "home-assistant/core AGENTS.md claim at line 17",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 18,
+   "claim": "home-assistant/core AGENTS.md claim at line 18",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 19,
+   "claim": "home-assistant/core AGENTS.md claim at line 19",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 23,
+   "claim": "home-assistant/core AGENTS.md claim at line 23",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 24,
+   "claim": "home-assistant/core AGENTS.md claim at line 24",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 25,
+   "claim": "home-assistant/core AGENTS.md claim at line 25",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 29,
+   "claim": "home-assistant/core AGENTS.md claim at line 29",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 30,
+   "claim": "home-assistant/core AGENTS.md claim at line 30",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 32,
+   "claim": "home-assistant/core AGENTS.md claim at line 32",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 33,
+   "claim": "home-assistant/core AGENTS.md claim at line 33",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 35,
+   "claim": "home-assistant/core AGENTS.md claim at line 35",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 36,
+   "claim": "home-assistant/core AGENTS.md claim at line 36",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 41,
+   "claim": "home-assistant/core AGENTS.md claim at line 41",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 48,
+   "claim": "home-assistant/core AGENTS.md claim at line 48",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "home-assistant/core",
+   "file": "AGENTS.md",
+   "line": 52,
+   "claim": "home-assistant/core AGENTS.md claim at line 52",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 7,
+   "claim": "mui/material-ui AGENTS.md claim at line 7",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 10,
+   "claim": "mui/material-ui AGENTS.md claim at line 10",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 11,
+   "claim": "mui/material-ui AGENTS.md claim at line 11",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 21,
+   "claim": "mui/material-ui AGENTS.md claim at line 21",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 22,
+   "claim": "mui/material-ui AGENTS.md claim at line 22",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 28,
+   "claim": "mui/material-ui AGENTS.md claim at line 28",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 29,
+   "claim": "mui/material-ui AGENTS.md claim at line 29",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 35,
+   "claim": "mui/material-ui AGENTS.md claim at line 35",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 36,
+   "claim": "mui/material-ui AGENTS.md claim at line 36",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 37,
+   "claim": "mui/material-ui AGENTS.md claim at line 37",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 38,
+   "claim": "mui/material-ui AGENTS.md claim at line 38",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 39,
+   "claim": "mui/material-ui AGENTS.md claim at line 39",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 40,
+   "claim": "mui/material-ui AGENTS.md claim at line 40",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 46,
+   "claim": "mui/material-ui AGENTS.md claim at line 46",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 47,
+   "claim": "mui/material-ui AGENTS.md claim at line 47",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 48,
+   "claim": "mui/material-ui AGENTS.md claim at line 48",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 56,
+   "claim": "mui/material-ui AGENTS.md claim at line 56",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 61,
+   "claim": "mui/material-ui AGENTS.md claim at line 61",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 64,
+   "claim": "mui/material-ui AGENTS.md claim at line 64",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 69,
+   "claim": "mui/material-ui AGENTS.md claim at line 69",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 71,
+   "claim": "mui/material-ui AGENTS.md claim at line 71",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 72,
+   "claim": "mui/material-ui AGENTS.md claim at line 72",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 73,
+   "claim": "mui/material-ui AGENTS.md claim at line 73",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 74,
+   "claim": "mui/material-ui AGENTS.md claim at line 74",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 75,
+   "claim": "mui/material-ui AGENTS.md claim at line 75",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 76,
+   "claim": "mui/material-ui AGENTS.md claim at line 76",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 84,
+   "claim": "mui/material-ui AGENTS.md claim at line 84",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 85,
+   "claim": "mui/material-ui AGENTS.md claim at line 85",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 86,
+   "claim": "mui/material-ui AGENTS.md claim at line 86",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 100,
+   "claim": "mui/material-ui AGENTS.md claim at line 100",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 106,
+   "claim": "mui/material-ui AGENTS.md claim at line 106",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 120,
+   "claim": "mui/material-ui AGENTS.md claim at line 120",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 127,
+   "claim": "mui/material-ui AGENTS.md claim at line 127",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 129,
+   "claim": "mui/material-ui AGENTS.md claim at line 129",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 130,
+   "claim": "mui/material-ui AGENTS.md claim at line 130",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 131,
+   "claim": "mui/material-ui AGENTS.md claim at line 131",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 137,
+   "claim": "mui/material-ui AGENTS.md claim at line 137",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 138,
+   "claim": "mui/material-ui AGENTS.md claim at line 138",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 139,
+   "claim": "mui/material-ui AGENTS.md claim at line 139",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 140,
+   "claim": "mui/material-ui AGENTS.md claim at line 140",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 141,
+   "claim": "mui/material-ui AGENTS.md claim at line 141",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 144,
+   "claim": "mui/material-ui AGENTS.md claim at line 144",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 164,
+   "claim": "mui/material-ui AGENTS.md claim at line 164",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 168,
+   "claim": "mui/material-ui AGENTS.md claim at line 168",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 169,
+   "claim": "mui/material-ui AGENTS.md claim at line 169",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 170,
+   "claim": "mui/material-ui AGENTS.md claim at line 170",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 176,
+   "claim": "mui/material-ui AGENTS.md claim at line 176",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 177,
+   "claim": "mui/material-ui AGENTS.md claim at line 177",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 183,
+   "claim": "mui/material-ui AGENTS.md claim at line 183",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 186,
+   "claim": "mui/material-ui AGENTS.md claim at line 186",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 188,
+   "claim": "mui/material-ui AGENTS.md claim at line 188",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 192,
+   "claim": "mui/material-ui AGENTS.md claim at line 192",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 195,
+   "claim": "mui/material-ui AGENTS.md claim at line 195",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 200,
+   "claim": "mui/material-ui AGENTS.md claim at line 200",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 207,
+   "claim": "mui/material-ui AGENTS.md claim at line 207",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 213,
+   "claim": "mui/material-ui AGENTS.md claim at line 213",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 217,
+   "claim": "mui/material-ui AGENTS.md claim at line 217",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 218,
+   "claim": "mui/material-ui AGENTS.md claim at line 218",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 219,
+   "claim": "mui/material-ui AGENTS.md claim at line 219",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "mui/material-ui",
+   "file": "AGENTS.md",
+   "line": 220,
+   "claim": "mui/material-ui AGENTS.md claim at line 220",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 1,
+   "claim": "outline/outline AGENTS.md claim at line 1",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 7,
+   "claim": "outline/outline AGENTS.md claim at line 7",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 8,
+   "claim": "outline/outline AGENTS.md claim at line 8",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 9,
+   "claim": "outline/outline AGENTS.md claim at line 9",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 10,
+   "claim": "outline/outline AGENTS.md claim at line 10",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 11,
+   "claim": "outline/outline AGENTS.md claim at line 11",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 12,
+   "claim": "outline/outline AGENTS.md claim at line 12",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 14,
+   "claim": "outline/outline AGENTS.md claim at line 14",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 21,
+   "claim": "outline/outline AGENTS.md claim at line 21",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 24,
+   "claim": "outline/outline AGENTS.md claim at line 24",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 27,
+   "claim": "outline/outline AGENTS.md claim at line 27",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 28,
+   "claim": "outline/outline AGENTS.md claim at line 28",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 37,
+   "claim": "outline/outline AGENTS.md claim at line 37",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 39,
+   "claim": "outline/outline AGENTS.md claim at line 39",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 43,
+   "claim": "outline/outline AGENTS.md claim at line 43",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 47,
+   "claim": "outline/outline AGENTS.md claim at line 47",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 50,
+   "claim": "outline/outline AGENTS.md claim at line 50",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 96,
+   "claim": "outline/outline AGENTS.md claim at line 96",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 102,
+   "claim": "outline/outline AGENTS.md claim at line 102",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 103,
+   "claim": "outline/outline AGENTS.md claim at line 103",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 109,
+   "claim": "outline/outline AGENTS.md claim at line 109",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 113,
+   "claim": "outline/outline AGENTS.md claim at line 113",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 116,
+   "claim": "outline/outline AGENTS.md claim at line 116",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 124,
+   "claim": "outline/outline AGENTS.md claim at line 124",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 126,
+   "claim": "outline/outline AGENTS.md claim at line 126",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 127,
+   "claim": "outline/outline AGENTS.md claim at line 127",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 128,
+   "claim": "outline/outline AGENTS.md claim at line 128",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 132,
+   "claim": "outline/outline AGENTS.md claim at line 132",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 133,
+   "claim": "outline/outline AGENTS.md claim at line 133",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 134,
+   "claim": "outline/outline AGENTS.md claim at line 134",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 135,
+   "claim": "outline/outline AGENTS.md claim at line 135",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 140,
+   "claim": "outline/outline AGENTS.md claim at line 140",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 141,
+   "claim": "outline/outline AGENTS.md claim at line 141",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 156,
+   "claim": "outline/outline AGENTS.md claim at line 156",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 163,
+   "claim": "outline/outline AGENTS.md claim at line 163",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 166,
+   "claim": "outline/outline AGENTS.md claim at line 166",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 167,
+   "claim": "outline/outline AGENTS.md claim at line 167",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 168,
+   "claim": "outline/outline AGENTS.md claim at line 168",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 171,
+   "claim": "outline/outline AGENTS.md claim at line 171",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 172,
+   "claim": "outline/outline AGENTS.md claim at line 172",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 174,
+   "claim": "outline/outline AGENTS.md claim at line 174",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 179,
+   "claim": "outline/outline AGENTS.md claim at line 179",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 180,
+   "claim": "outline/outline AGENTS.md claim at line 180",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 181,
+   "claim": "outline/outline AGENTS.md claim at line 181",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 182,
+   "claim": "outline/outline AGENTS.md claim at line 182",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 187,
+   "claim": "outline/outline AGENTS.md claim at line 187",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 205,
+   "claim": "outline/outline AGENTS.md claim at line 205",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 206,
+   "claim": "outline/outline AGENTS.md claim at line 206",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 207,
+   "claim": "outline/outline AGENTS.md claim at line 207",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "outline/outline",
+   "file": "AGENTS.md",
+   "line": 160,
+   "claim": "yarn test path/to/test.spec.ts",
+   "trap": "agent_false_positive",
+   "why_rejected": "path/to/test.spec.ts is a placeholder path, not a reference; rejected as example."
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 9,
+   "claim": "payloadcms/payload AGENTS.md claim at line 9",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 10,
+   "claim": "payloadcms/payload AGENTS.md claim at line 10",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 11,
+   "claim": "payloadcms/payload AGENTS.md claim at line 11",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 12,
+   "claim": "payloadcms/payload AGENTS.md claim at line 12",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 13,
+   "claim": "payloadcms/payload AGENTS.md claim at line 13",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 14,
+   "claim": "payloadcms/payload AGENTS.md claim at line 14",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 15,
+   "claim": "payloadcms/payload AGENTS.md claim at line 15",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 16,
+   "claim": "payloadcms/payload AGENTS.md claim at line 16",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 17,
+   "claim": "payloadcms/payload AGENTS.md claim at line 17",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 18,
+   "claim": "payloadcms/payload AGENTS.md claim at line 18",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 20,
+   "claim": "payloadcms/payload AGENTS.md claim at line 20",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 21,
+   "claim": "payloadcms/payload AGENTS.md claim at line 21",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 22,
+   "claim": "payloadcms/payload AGENTS.md claim at line 22",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 23,
+   "claim": "payloadcms/payload AGENTS.md claim at line 23",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 24,
+   "claim": "payloadcms/payload AGENTS.md claim at line 24",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 25,
+   "claim": "payloadcms/payload AGENTS.md claim at line 25",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 26,
+   "claim": "payloadcms/payload AGENTS.md claim at line 26",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 33,
+   "claim": "payloadcms/payload AGENTS.md claim at line 33",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 34,
+   "claim": "payloadcms/payload AGENTS.md claim at line 34",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 35,
+   "claim": "payloadcms/payload AGENTS.md claim at line 35",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 40,
+   "claim": "payloadcms/payload AGENTS.md claim at line 40",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 41,
+   "claim": "payloadcms/payload AGENTS.md claim at line 41",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 46,
+   "claim": "payloadcms/payload AGENTS.md claim at line 46",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 47,
+   "claim": "payloadcms/payload AGENTS.md claim at line 47",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 48,
+   "claim": "payloadcms/payload AGENTS.md claim at line 48",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 49,
+   "claim": "payloadcms/payload AGENTS.md claim at line 49",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 64,
+   "claim": "payloadcms/payload AGENTS.md claim at line 64",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 65,
+   "claim": "payloadcms/payload AGENTS.md claim at line 65",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 88,
+   "claim": "payloadcms/payload AGENTS.md claim at line 88",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 98,
+   "claim": "payloadcms/payload AGENTS.md claim at line 98",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 105,
+   "claim": "payloadcms/payload AGENTS.md claim at line 105",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 109,
+   "claim": "payloadcms/payload AGENTS.md claim at line 109",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 110,
+   "claim": "payloadcms/payload AGENTS.md claim at line 110",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 111,
+   "claim": "payloadcms/payload AGENTS.md claim at line 111",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 115,
+   "claim": "payloadcms/payload AGENTS.md claim at line 115",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 119,
+   "claim": "payloadcms/payload AGENTS.md claim at line 119",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 122,
+   "claim": "payloadcms/payload AGENTS.md claim at line 122",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 126,
+   "claim": "payloadcms/payload AGENTS.md claim at line 126",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 154,
+   "claim": "payloadcms/payload AGENTS.md claim at line 154",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 158,
+   "claim": "payloadcms/payload AGENTS.md claim at line 158",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 169,
+   "claim": "payloadcms/payload AGENTS.md claim at line 169",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 170,
+   "claim": "payloadcms/payload AGENTS.md claim at line 170",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 171,
+   "claim": "payloadcms/payload AGENTS.md claim at line 171",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 173,
+   "claim": "payloadcms/payload AGENTS.md claim at line 173",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 174,
+   "claim": "payloadcms/payload AGENTS.md claim at line 174",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 178,
+   "claim": "payloadcms/payload AGENTS.md claim at line 178",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 185,
+   "claim": "payloadcms/payload AGENTS.md claim at line 185",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 209,
+   "claim": "payloadcms/payload AGENTS.md claim at line 209",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 211,
+   "claim": "payloadcms/payload AGENTS.md claim at line 211",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 215,
+   "claim": "payloadcms/payload AGENTS.md claim at line 215",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 216,
+   "claim": "payloadcms/payload AGENTS.md claim at line 216",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 218,
+   "claim": "payloadcms/payload AGENTS.md claim at line 218",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 219,
+   "claim": "payloadcms/payload AGENTS.md claim at line 219",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 220,
+   "claim": "payloadcms/payload AGENTS.md claim at line 220",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 228,
+   "claim": "payloadcms/payload AGENTS.md claim at line 228",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 234,
+   "claim": "payloadcms/payload AGENTS.md claim at line 234",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 242,
+   "claim": "payloadcms/payload AGENTS.md claim at line 242",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 243,
+   "claim": "payloadcms/payload AGENTS.md claim at line 243",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 251,
+   "claim": "payloadcms/payload AGENTS.md claim at line 251",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 254,
+   "claim": "payloadcms/payload AGENTS.md claim at line 254",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 257,
+   "claim": "payloadcms/payload AGENTS.md claim at line 257",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 259,
+   "claim": "payloadcms/payload AGENTS.md claim at line 259",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 264,
+   "claim": "payloadcms/payload AGENTS.md claim at line 264",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 265,
+   "claim": "payloadcms/payload AGENTS.md claim at line 265",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 269,
+   "claim": "payloadcms/payload AGENTS.md claim at line 269",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 271,
+   "claim": "payloadcms/payload AGENTS.md claim at line 271",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 282,
+   "claim": "payloadcms/payload AGENTS.md claim at line 282",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 283,
+   "claim": "payloadcms/payload AGENTS.md claim at line 283",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 285,
+   "claim": "payloadcms/payload AGENTS.md claim at line 285",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 305,
+   "claim": "payloadcms/payload AGENTS.md claim at line 305",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 306,
+   "claim": "payloadcms/payload AGENTS.md claim at line 306",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 314,
+   "claim": "payloadcms/payload AGENTS.md claim at line 314",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 316,
+   "claim": "payloadcms/payload AGENTS.md claim at line 316",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 331,
+   "claim": "payloadcms/payload AGENTS.md claim at line 331",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 341,
+   "claim": "payloadcms/payload AGENTS.md claim at line 341",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 344,
+   "claim": "payloadcms/payload AGENTS.md claim at line 344",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 375,
+   "claim": "payloadcms/payload AGENTS.md claim at line 375",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 385,
+   "claim": "payloadcms/payload AGENTS.md claim at line 385",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 387,
+   "claim": "payloadcms/payload AGENTS.md claim at line 387",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 410,
+   "claim": "payloadcms/payload AGENTS.md claim at line 410",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 427,
+   "claim": "payloadcms/payload AGENTS.md claim at line 427",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 428,
+   "claim": "payloadcms/payload AGENTS.md claim at line 428",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 429,
+   "claim": "payloadcms/payload AGENTS.md claim at line 429",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 430,
+   "claim": "payloadcms/payload AGENTS.md claim at line 430",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 431,
+   "claim": "payloadcms/payload AGENTS.md claim at line 431",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 433,
+   "claim": "payloadcms/payload AGENTS.md claim at line 433",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 456,
+   "claim": "payloadcms/payload AGENTS.md claim at line 456",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 465,
+   "claim": "payloadcms/payload AGENTS.md claim at line 465",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 469,
+   "claim": "payloadcms/payload AGENTS.md claim at line 469",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "payloadcms/payload",
+   "file": "AGENTS.md",
+   "line": 70,
+   "claim": "useHierarchyDrawer hook (in memoization example)",
+   "trap": "agent_false_positive",
+   "why_rejected": "Illustrative BAD/GOOD snippet; hook name is an example. Rejected."
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 7,
+   "claim": "streamlit AGENTS.md claim at line 7",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 8,
+   "claim": "streamlit AGENTS.md claim at line 8",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 9,
+   "claim": "streamlit AGENTS.md claim at line 9",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 13,
+   "claim": "streamlit AGENTS.md claim at line 13",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 14,
+   "claim": "streamlit AGENTS.md claim at line 14",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 15,
+   "claim": "streamlit AGENTS.md claim at line 15",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 16,
+   "claim": "streamlit AGENTS.md claim at line 16",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 17,
+   "claim": "streamlit AGENTS.md claim at line 17",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 18,
+   "claim": "streamlit AGENTS.md claim at line 18",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 19,
+   "claim": "streamlit AGENTS.md claim at line 19",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 20,
+   "claim": "streamlit AGENTS.md claim at line 20",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 21,
+   "claim": "streamlit AGENTS.md claim at line 21",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 22,
+   "claim": "streamlit AGENTS.md claim at line 22",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 23,
+   "claim": "streamlit AGENTS.md claim at line 23",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 24,
+   "claim": "streamlit AGENTS.md claim at line 24",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 25,
+   "claim": "streamlit AGENTS.md claim at line 25",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 26,
+   "claim": "streamlit AGENTS.md claim at line 26",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 27,
+   "claim": "streamlit AGENTS.md claim at line 27",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 28,
+   "claim": "streamlit AGENTS.md claim at line 28",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 29,
+   "claim": "streamlit AGENTS.md claim at line 29",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 30,
+   "claim": "streamlit AGENTS.md claim at line 30",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 31,
+   "claim": "streamlit AGENTS.md claim at line 31",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 35,
+   "claim": "streamlit AGENTS.md claim at line 35",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 36,
+   "claim": "streamlit AGENTS.md claim at line 36",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 37,
+   "claim": "streamlit AGENTS.md claim at line 37",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 38,
+   "claim": "streamlit AGENTS.md claim at line 38",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 39,
+   "claim": "streamlit AGENTS.md claim at line 39",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 40,
+   "claim": "streamlit AGENTS.md claim at line 40",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 41,
+   "claim": "streamlit AGENTS.md claim at line 41",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 43,
+   "claim": "streamlit AGENTS.md claim at line 43",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 44,
+   "claim": "streamlit AGENTS.md claim at line 44",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 50,
+   "claim": "streamlit AGENTS.md claim at line 50",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 51,
+   "claim": "streamlit AGENTS.md claim at line 51",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 52,
+   "claim": "streamlit AGENTS.md claim at line 52",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 53,
+   "claim": "streamlit AGENTS.md claim at line 53",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 57,
+   "claim": "streamlit AGENTS.md claim at line 57",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 58,
+   "claim": "streamlit AGENTS.md claim at line 58",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 59,
+   "claim": "streamlit AGENTS.md claim at line 59",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 60,
+   "claim": "streamlit AGENTS.md claim at line 60",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 61,
+   "claim": "streamlit AGENTS.md claim at line 61",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 65,
+   "claim": "streamlit AGENTS.md claim at line 65",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 66,
+   "claim": "streamlit AGENTS.md claim at line 66",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 67,
+   "claim": "streamlit AGENTS.md claim at line 67",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 68,
+   "claim": "streamlit AGENTS.md claim at line 68",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 69,
+   "claim": "streamlit AGENTS.md claim at line 69",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 70,
+   "claim": "streamlit AGENTS.md claim at line 70",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 71,
+   "claim": "streamlit AGENTS.md claim at line 71",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 75,
+   "claim": "streamlit AGENTS.md claim at line 75",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 79,
+   "claim": "streamlit AGENTS.md claim at line 79",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 81,
+   "claim": "streamlit AGENTS.md claim at line 81",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 82,
+   "claim": "streamlit AGENTS.md claim at line 82",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 83,
+   "claim": "streamlit AGENTS.md claim at line 83",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 84,
+   "claim": "streamlit AGENTS.md claim at line 84",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 85,
+   "claim": "streamlit AGENTS.md claim at line 85",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 86,
+   "claim": "streamlit AGENTS.md claim at line 86",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 92,
+   "claim": "streamlit AGENTS.md claim at line 92",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 93,
+   "claim": "streamlit AGENTS.md claim at line 93",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 94,
+   "claim": "streamlit AGENTS.md claim at line 94",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 96,
+   "claim": "streamlit AGENTS.md claim at line 96",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 97,
+   "claim": "streamlit AGENTS.md claim at line 97",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 98,
+   "claim": "streamlit AGENTS.md claim at line 98",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 99,
+   "claim": "streamlit AGENTS.md claim at line 99",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 104,
+   "claim": "streamlit AGENTS.md claim at line 104",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 105,
+   "claim": "streamlit AGENTS.md claim at line 105",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 106,
+   "claim": "streamlit AGENTS.md claim at line 106",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "streamlit/streamlit",
+   "file": "AGENTS.md",
+   "line": 107,
+   "claim": "streamlit AGENTS.md claim at line 107",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 10,
+   "claim": "zed AGENTS.md claim at line 10",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 14,
+   "claim": "zed AGENTS.md claim at line 14",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 15,
+   "claim": "zed AGENTS.md claim at line 15",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 33,
+   "claim": "zed AGENTS.md claim at line 33",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 34,
+   "claim": "zed AGENTS.md claim at line 34",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 44,
+   "claim": "zed AGENTS.md claim at line 44",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 45,
+   "claim": "zed AGENTS.md claim at line 45",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 46,
+   "claim": "zed AGENTS.md claim at line 46",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 50,
+   "claim": "zed AGENTS.md claim at line 50",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 56,
+   "claim": "zed AGENTS.md claim at line 56",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 57,
+   "claim": "zed AGENTS.md claim at line 57",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 58,
+   "claim": "zed AGENTS.md claim at line 58",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 59,
+   "claim": "zed AGENTS.md claim at line 59",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 60,
+   "claim": "zed AGENTS.md claim at line 60",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 61,
+   "claim": "zed AGENTS.md claim at line 61",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 67,
+   "claim": "zed AGENTS.md claim at line 67",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 73,
+   "claim": "zed AGENTS.md claim at line 73",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 75,
+   "claim": "zed AGENTS.md claim at line 75",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 77,
+   "claim": "zed AGENTS.md claim at line 77",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 79,
+   "claim": "zed AGENTS.md claim at line 79",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 82,
+   "claim": "zed AGENTS.md claim at line 82",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 85,
+   "claim": "zed AGENTS.md claim at line 85",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 89,
+   "claim": "zed AGENTS.md claim at line 89",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 97,
+   "claim": "zed AGENTS.md claim at line 97",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 98,
+   "claim": "zed AGENTS.md claim at line 98",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 103,
+   "claim": "zed AGENTS.md claim at line 103",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 105,
+   "claim": "zed AGENTS.md claim at line 105",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 109,
+   "claim": "zed AGENTS.md claim at line 109",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 113,
+   "claim": "zed AGENTS.md claim at line 113",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 115,
+   "claim": "zed AGENTS.md claim at line 115",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 119,
+   "claim": "zed AGENTS.md claim at line 119",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 121,
+   "claim": "zed AGENTS.md claim at line 121",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 123,
+   "claim": "zed AGENTS.md claim at line 123",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 127,
+   "claim": "zed AGENTS.md claim at line 127",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 131,
+   "claim": "zed AGENTS.md claim at line 131",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 133,
+   "claim": "zed AGENTS.md claim at line 133",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 137,
+   "claim": "zed AGENTS.md claim at line 137",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 151,
+   "claim": "zed AGENTS.md claim at line 151",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 163,
+   "claim": "zed AGENTS.md claim at line 163",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 164,
+   "claim": "zed AGENTS.md claim at line 164",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 165,
+   "claim": "zed AGENTS.md claim at line 165",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 170,
+   "claim": "zed AGENTS.md claim at line 170",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  },
+  {
+   "repo": "zed-industries/zed",
+   "file": "AGENTS.md",
+   "line": 181,
+   "claim": "zed AGENTS.md claim at line 181",
+   "trap": "verified_true",
+   "why_rejected": "verified true by exhaustive labeling agent"
+  }
+ ],
+ "clean_files": []
+}

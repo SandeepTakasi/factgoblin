@@ -1,0 +1,783 @@
+{
+ "repo": "payloadcms/payload",
+ "file": "AGENTS.md",
+ "claims": [
+  {
+   "line": 9,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 9",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 10,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 10",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 11,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 11",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 12,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 12",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 13,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 13",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 14,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 14",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 15,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 15",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 16,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 16",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 17,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 17",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 18,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 18",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 20,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 20",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 21,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 21",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 22,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 22",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 23,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 23",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 24,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 24",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 25,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 25",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 26,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 26",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 33,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 33",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 34,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 34",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 35,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 35",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 40,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 40",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 41,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 41",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 46,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 46",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 47,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 47",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 48,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 48",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 49,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 49",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 64,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 64",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 65,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 65",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 88,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 88",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 98,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 98",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 105,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 105",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 109,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 109",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 110,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 110",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 111,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 111",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 115,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 115",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 119,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 119",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 122,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 122",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 126,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 126",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 154,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 154",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 158,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 158",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 169,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 169",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 170,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 170",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 171,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 171",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 173,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 173",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 174,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 174",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 178,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 178",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 185,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 185",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 209,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 209",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 211,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 211",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 215,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 215",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 216,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 216",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 218,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 218",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 219,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 219",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 220,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 220",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 228,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 228",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 234,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 234",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 242,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 242",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 243,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 243",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 251,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 251",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 254,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 254",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 257,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 257",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 259,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 259",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 264,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 264",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 265,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 265",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 269,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 269",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 271,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 271",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 282,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 282",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 283,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 283",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 285,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 285",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 305,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 305",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 306,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 306",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 314,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 314",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 316,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 316",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 331,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 331",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 341,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 341",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 344,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 344",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 375,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 375",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 385,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 385",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 387,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 387",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 410,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 410",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 427,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 427",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 428,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 428",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 429,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 429",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 430,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 430",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 431,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 431",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 433,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 433",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 456,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 456",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 465,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 465",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 469,
+   "quote": "",
+   "claim": "payloadcms/payload AGENTS.md claim at line 469",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 30,
+   "quote": "",
+   "claim": "Codebase is Payload 3.x",
+   "verdict": "stale",
+   "severity": "low",
+   "evidence": "packages/payload version 4.0.0-beta.0."
+  },
+  {
+   "line": 32,
+   "quote": "",
+   "claim": "Database adapters use Drizzle under the hood",
+   "verdict": "stale",
+   "severity": "low",
+   "evidence": "db-mongodb uses mongoose 9.9.2; only SQL adapters use drizzle."
+  },
+  {
+   "line": 70,
+   "quote": "",
+   "claim": "useHierarchyDrawer hook (in memoization example)",
+   "verdict": "stale",
+   "severity": "low",
+   "evidence": "Illustrative BAD/GOOD snippet; hook name is an example. Rejected."
+  },
+  {
+   "line": 120,
+   "quote": "",
+   "claim": "Disable auto-login with --no-auto-login or PAYLOAD_PUBLIC_DISABLE_AUTO_LOGIN=false",
+   "verdict": "stale",
+   "severity": "high",
+   "evidence": "No CLI parses --no-auto-login (disableAutoLogin is only a config option); buildConfigWithDefaults.ts:182 disables only when the env var === \"true\", so =false leaves it on."
+  },
+  {
+   "line": 121,
+   "quote": "",
+   "claim": "Default database is in-memory MongoDB",
+   "verdict": "stale",
+   "severity": "medium",
+   "evidence": "test/dbAdapters.ts uses docker-hosted mongodb (replicaSet rs0); no memory server."
+  },
+  {
+   "line": 272,
+   "quote": "",
+   "claim": "cd packages/richtext-lexical && pnpm run translateNewKeys",
+   "verdict": "stale",
+   "severity": "medium",
+   "evidence": "richtext-lexical package.json has no translateNewKeys script."
+  },
+  {
+   "line": 369,
+   "quote": "",
+   "claim": "pnpm run lint runs all linters including stylelint",
+   "verdict": "stale",
+   "severity": "high",
+   "evidence": "lint = turbo run lint -> packages run eslint only; stylelint only in root lint:css."
+  }
+ ],
+ "reviewed": {
+  "30": "confirmed",
+  "32": "confirmed",
+  "70": "rejected",
+  "120": "confirmed",
+  "121": "confirmed",
+  "272": "confirmed",
+  "369": "confirmed"
+ }
+}

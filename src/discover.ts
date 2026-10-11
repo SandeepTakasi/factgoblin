@@ -5,7 +5,8 @@ import { trackedFiles } from './git.ts';
 import type { InstructionFile } from './types.ts';
 
 const INSTRUCTION_FILE = [
-  /(^|\/)(AGENTS|CLAUDE|GEMINI)\.md$/i,
+  /(^|\/)(AGENTS|CLAUDE|GEMINI)\.md$/,
+  /^(agents|claude|gemini)\.md$/i, // lowercase variants only at the root; nested ones are usually docs pages
   /^\.github\/copilot-instructions\.md$/,
   /(^|\/)\.cursorrules$/,
   /(^|\/)\.cursor\/rules\/.+\.mdc$/,

@@ -60,4 +60,5 @@ test('summarize: precision over labeled medium/high only; high-severity recall',
   assert.equal(sum.fpTrap, 1);
   assert.equal(sum.precisionLabeled, 2 / 3);
   assert.equal(sum.recallHigh, 1);
+  assert.equal(sum.recallMediumHigh, 1); // the only labels are 2 high + 1 low
 });

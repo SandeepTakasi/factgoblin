@@ -14,6 +14,7 @@ function fixture(): string {
     'AGENTS.md': '# Agents\nRun `make build`.\n',
     'packages/web/AGENTS.md': '# Web agents\n',
     'vendor/lib/AGENTS.md': '# vendored, must be ignored\n',
+    'docs/ai/agents.md': '# a docs page about agents, not an instruction file\n',
     '.agents/skills/release/SKILL.md': '---\nname: release\n---\n',
     '.github/pull_request_template.md': 'template\n',
     '.gitignore': 'dist/\n',

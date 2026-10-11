@@ -1,0 +1,535 @@
+{
+ "repo": "streamlit/streamlit",
+ "file": "AGENTS.md",
+ "claims": [
+  {
+   "line": 7,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 7",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 8,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 8",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 9,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 9",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 13,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 13",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 14,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 14",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 15,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 15",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 16,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 16",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 17,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 17",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 18,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 18",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 19,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 19",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 20,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 20",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 21,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 21",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 22,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 22",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 23,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 23",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 24,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 24",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 25,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 25",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 26,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 26",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 27,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 27",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 28,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 28",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 29,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 29",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 30,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 30",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 31,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 31",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 35,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 35",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 36,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 36",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 37,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 37",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 38,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 38",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 39,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 39",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 40,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 40",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 41,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 41",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 43,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 43",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 44,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 44",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 50,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 50",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 51,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 51",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 52,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 52",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 53,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 53",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 57,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 57",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 58,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 58",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 59,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 59",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 60,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 60",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 61,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 61",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 65,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 65",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 66,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 66",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 67,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 67",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 68,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 68",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 69,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 69",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 70,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 70",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 71,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 71",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 75,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 75",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 79,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 79",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 81,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 81",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 82,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 82",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 83,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 83",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 84,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 84",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 85,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 85",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 86,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 86",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 92,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 92",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 93,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 93",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 94,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 94",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 96,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 96",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 97,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 97",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 98,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 98",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 99,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 99",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 104,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 104",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 105,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 105",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 106,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 106",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 107,
+   "quote": "",
+   "claim": "streamlit AGENTS.md claim at line 107",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  }
+ ],
+ "reviewed": {}
+}

@@ -1,0 +1,427 @@
+{
+ "repo": "outline/outline",
+ "file": "AGENTS.md",
+ "claims": [
+  {
+   "line": 1,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 1",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 7,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 7",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 8,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 8",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 9,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 9",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 10,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 10",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 11,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 11",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 12,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 12",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 14,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 14",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 21,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 21",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 24,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 24",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 27,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 27",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 28,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 28",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 37,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 37",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 39,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 39",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 43,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 43",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 47,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 47",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 50,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 50",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 96,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 96",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 102,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 102",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 103,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 103",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 109,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 109",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 113,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 113",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 116,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 116",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 124,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 124",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 126,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 126",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 127,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 127",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 128,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 128",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 132,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 132",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 133,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 133",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 134,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 134",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 135,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 135",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 140,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 140",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 141,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 141",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 156,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 156",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 163,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 163",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 166,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 166",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 167,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 167",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 168,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 168",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 171,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 171",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 172,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 172",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 174,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 174",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 179,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 179",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 180,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 180",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 181,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 181",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 182,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 182",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 187,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 187",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 205,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 205",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 206,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 206",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 207,
+   "quote": "",
+   "claim": "outline/outline AGENTS.md claim at line 207",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 64,
+   "quote": "",
+   "claim": "TypeScript: Use strict mode",
+   "verdict": "stale",
+   "severity": "low",
+   "evidence": "tsconfig.json has \"strict\": false; only noImplicitAny/strictNullChecks/alwaysStrict enabled."
+  },
+  {
+   "line": 123,
+   "quote": "",
+   "claim": "RESTful endpoints under /api/",
+   "verdict": "stale",
+   "severity": "low",
+   "evidence": "API is RPC-style POST endpoints (server/routes/api/documents/documents.ts documents.info); file line 1 itself says RPC."
+  },
+  {
+   "line": 160,
+   "quote": "",
+   "claim": "yarn test path/to/test.spec.ts",
+   "verdict": "stale",
+   "severity": "low",
+   "evidence": "path/to/test.spec.ts is a placeholder path, not a reference; rejected as example."
+  }
+ ],
+ "reviewed": {
+  "64": "confirmed",
+  "123": "confirmed",
+  "160": "rejected"
+ }
+}

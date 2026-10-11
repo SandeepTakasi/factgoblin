@@ -1,0 +1,361 @@
+{
+ "repo": "zed-industries/zed",
+ "file": "AGENTS.md",
+ "claims": [
+  {
+   "line": 10,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 10",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 14,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 14",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 15,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 15",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 33,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 33",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 34,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 34",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 44,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 44",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 45,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 45",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 46,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 46",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 50,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 50",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 56,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 56",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 57,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 57",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 58,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 58",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 59,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 59",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 60,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 60",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 61,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 61",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 67,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 67",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 73,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 73",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 75,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 75",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 77,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 77",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 79,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 79",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 82,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 82",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 85,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 85",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 89,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 89",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 97,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 97",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 98,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 98",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 103,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 103",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 105,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 105",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 109,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 109",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 113,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 113",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 115,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 115",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 119,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 119",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 121,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 121",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 123,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 123",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 127,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 127",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 131,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 131",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 133,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 133",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 137,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 137",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 151,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 151",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 163,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 163",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 164,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 164",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 165,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 165",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 170,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 170",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 181,
+   "quote": "",
+   "claim": "zed AGENTS.md claim at line 181",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 166,
+   "quote": "",
+   "claim": "Generate investigation prompt from crash: script/crash-to-prompt <issue-id>",
+   "verdict": "stale",
+   "severity": "medium",
+   "evidence": "No script/crash-to-prompt in the repo (script/sentry-fetch exists); the only reference is .rules:166."
+  }
+ ],
+ "reviewed": {
+  "166": "confirmed"
+ }
+}

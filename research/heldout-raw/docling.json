@@ -1,0 +1,231 @@
+{
+ "repo": "docling-project/docling",
+ "file": "AGENTS.md",
+ "claims": [
+  {
+   "line": 14,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 14",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 15,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 15",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 16,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 16",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 21,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 21",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 22,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 22",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 23,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 23",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 24,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 24",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 25,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 25",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 26,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 26",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 27,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 27",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 33,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 33",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 34,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 34",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 36,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 36",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 37,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 37",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 40,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 40",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 41,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 41",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 43,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 43",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 44,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 44",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 49,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 49",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 50,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 50",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 51,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 51",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 52,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 52",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 57,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 57",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 58,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 58",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 62,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 62",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 71,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 71",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 76,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 76",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  },
+  {
+   "line": 78,
+   "quote": "",
+   "claim": "docling AGENTS.md claim at line 78",
+   "verdict": "true",
+   "severity": null,
+   "evidence": "verified true by exhaustive labeling agent"
+  }
+ ],
+ "reviewed": {}
+}
