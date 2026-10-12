@@ -9,10 +9,10 @@ import { markdown } from './report.ts';
 import { scopeEval } from './scope-eval.ts';
 
 const USAGE = `Usage:
-  agent-drift audit [repo] [--since REF] [--file PATH]... [--include-skills] [--no-fix] [--apply] [--json OUT] [--model M]
+  agent-drift audit [repo] [--since REF] [--file PATH]... [--include-skills] [--no-fix] [--derivable-fix update|delete] [--apply] [--json OUT] [--model M]
   agent-drift bench [--corpus PATH] [--repo OWNER/NAME]... [--model M]
   agent-drift scope-eval [--corpus PATH]...
-  agent-drift pr [repo] [--since REF] [--branch NAME] [--base BRANCH] [--include-skills] [--dry-run] [--model M]`;
+  agent-drift pr [repo] [--since REF] [--branch NAME] [--base BRANCH] [--include-skills] [--derivable-fix update|delete] [--dry-run] [--model M]`;
 
 const { positionals, values } = parseArgs({
   allowPositionals: true,
@@ -22,6 +22,7 @@ const { positionals, values } = parseArgs({
     branch: { type: 'string', default: 'agent-drift/fixes' },
     base: { type: 'string' },
     'dry-run': { type: 'boolean' },
+    'derivable-fix': { type: 'string', default: 'update' },
     'include-skills': { type: 'boolean' },
     'no-fix': { type: 'boolean' },
     apply: { type: 'boolean' },
@@ -41,7 +42,7 @@ if (values.help || !command) {
 } else if (command === 'audit') {
   const repo = resolve(target ?? '.');
   const result = await audit(repo, {
-    files: values.file, since: values.since, includeSkills: values['include-skills'], fix: !values['no-fix'], model: values.model, log,
+    files: values.file, since: values.since, derivableFix: derivableFix(), includeSkills: values['include-skills'], fix: !values['no-fix'], model: values.model, log,
   });
   if (values.json) writeFileSync(values.json, JSON.stringify(result, null, 2));
   if (values.apply) applyFixes(result);
@@ -53,7 +54,7 @@ if (values.help || !command) {
   const repo = resolve(target ?? '.');
   const known = knownItems(repo, values.branch!);
   const skip = (c: { file: string; line: number }) => covers(known, c.file, readFileSync(join(repo, c.file), 'utf8'), c.line);
-  const result = await audit(repo, { since: values.since || undefined, skip, includeSkills: values['include-skills'], fix: true, model: values.model, log });
+  const result = await audit(repo, { since: values.since || undefined, skip, derivableFix: derivableFix(), includeSkills: values['include-skills'], fix: true, model: values.model, log });
   log(`audit: ${result.findings.length} finding(s), ${result.stats.skippedByScope} claim(s) skipped by scope, $${result.stats.costUsd.toFixed(2)}`);
   syncPr(result, { branch: values.branch!, base: values.base, dryRun: values['dry-run'], log });
 } else if (command === 'scope-eval') {
@@ -62,6 +63,15 @@ if (values.help || !command) {
 } else {
   console.error(USAGE);
   process.exitCode = 2;
+}
+
+function derivableFix(): 'update' | 'delete' {
+  const v = values['derivable-fix'];
+  if (v !== 'update' && v !== 'delete') {
+    console.error(`--derivable-fix must be "update" or "delete", got "${v}"`);
+    process.exit(2);
+  }
+  return v;
 }
 
 function applyFixes(result: AuditResult) {

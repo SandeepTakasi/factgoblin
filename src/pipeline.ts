@@ -17,6 +17,7 @@ export interface AuditOptions {
   skip?: (claim: Claim) => boolean; // e.g. claims an open fix PR already covers
   includeSkills?: boolean;
   fix?: boolean; // generate fix text (default true)
+  derivableFix?: 'update' | 'delete'; // for stale derivable claims: rewrite the line (default) or delete it
   model?: string;
   log?: (msg: string) => void;
 }
@@ -26,6 +27,8 @@ export interface AuditStats {
   claims: number;
   facts: number;
   passedMechanically: number;
+  staleMechanically: number; // derivable claims a deterministic check found stale (no model verification)
+  undecidedMechanically: number; // derivable claims no deterministic check could decide; skipped
   verified: number;
   skippedByScope: number;
   staleBeforeChallenge: number;
@@ -56,6 +59,26 @@ interface RawClaim {
 const READ_ONLY: LlmCall['tools'] = ['Read', 'Grep', 'Glob'];
 const VERIFY_BATCH = 10;
 
+/**
+ * Deterministic "delete this line" fix for a stale derivable claim. null when deleting would lose
+ * something: another still-true claim on the line, a claim spanning several lines, or ambiguous text.
+ */
+export function deleteFix(text: string, claim: Claim, sharedLines: Set<number>): { old: string; new: string; kind: 'delete' } | null {
+  const lines = text.split('\n');
+  const line = lines[claim.line - 1];
+  if (line === undefined || sharedLines.has(claim.line) || !line.replace(/\s+/g, ' ').includes(claim.quote.replace(/\s+/g, ' ').trim())) return null;
+  // Inside a fenced block, only shell commands are independent lines; deleting a line of example code
+  // or of a tree diagram would break it, so those get an update fix instead.
+  let fence: string | null = null;
+  for (const l of lines.slice(0, claim.line - 1)) {
+    const m = /^\s*(```|~~~)\s*([\w+-]*)/.exec(l);
+    if (m) fence = fence === null ? m[2].toLowerCase() : null;
+  }
+  if (fence !== null && !['bash', 'sh', 'shell', 'zsh', 'console', 'shellsession'].includes(fence)) return null;
+  const old = claim.line < lines.length ? line + '\n' : line;
+  return text.split(old).length === 2 ? { old, new: '', kind: 'delete' } : null;
+}
+
 /** Returns the 1-based line containing the quote, nearest to the claimed line; null if absent. */
 export function locate(lines: string[], quote: string, claimed: number): number | null {
   const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
@@ -75,7 +98,7 @@ export async function audit(repo: string, opts: AuditOptions = {}): Promise<Audi
   const log = opts.log ?? (() => {});
   const commit = git(repo, ['rev-parse', 'HEAD']).trim();
   const stats: AuditStats = {
-    files: 0, claims: 0, facts: 0, passedMechanically: 0, verified: 0, skippedByScope: 0, staleBeforeChallenge: 0, upheld: 0,
+    files: 0, claims: 0, facts: 0, passedMechanically: 0, staleMechanically: 0, undecidedMechanically: 0, verified: 0, skippedByScope: 0, staleBeforeChallenge: 0, upheld: 0,
     llmCalls: 0, cachedCalls: 0, costUsd: 0, llmMs: 0,
   };
   const call = async <T>(c: Omit<LlmCall, 'model'>): Promise<T> => {
@@ -138,17 +161,30 @@ export async function audit(repo: string, opts: AuditOptions = {}): Promise<Audi
     }
     stats.facts += facts.length;
 
+    type Stale = { claim: Claim; severity: Severity; reason: string; evidence: Evidence[]; derivable: boolean };
+    const stale = new Map<string, Stale>();
     const toVerify: { claim: (typeof claims)[number]; checks: string[] }[] = [];
     for (const { claim, results } of facts) {
-      if (claim.check === 'mechanical' && results.length && results.every((r) => r.status === 'pass')) {
-        stats.passedMechanically++;
+      // Semantic focus: derivable claims are decided by the free deterministic checks alone. A fail (or a
+      // moved file) goes straight to the adversarial challenge; anything undecidable is left alone.
+      // Model verification is spent only on semantic claims.
+      if (claim.check === 'mechanical' && results.length) {
+        const bad = results.find((r) => r.status === 'fail' || (r.status === 'unknown' && r.detail.startsWith('not at that path')));
+        if (bad) {
+          stats.staleMechanically++;
+          const note = `${bad.anchor.type} "${bad.anchor.value}": ${bad.detail}`;
+          stale.set(claim.id, { claim, severity: 'medium', reason: `Deterministic check: ${note}.`, evidence: [{ path: claim.file, line: claim.line, note }], derivable: true });
+        } else if (results.every((r) => r.status === 'pass')) {
+          stats.passedMechanically++;
+        } else {
+          stats.undecidedMechanically++;
+        }
         continue;
       }
       toVerify.push({ claim, checks: results.map((r) => `${r.anchor.type} "${r.anchor.value}": ${r.status} (${r.detail})`) });
     }
     stats.verified += toVerify.length;
 
-    const stale = new Map<string, { claim: Claim; severity: Severity; reason: string; evidence: Evidence[] }>();
     for (let i = 0; i < toVerify.length; i += VERIFY_BATCH) {
       const batch = toVerify.slice(i, i + VERIFY_BATCH);
       log(`${file.path}: verifying claims ${i + 1}-${i + batch.length} of ${toVerify.length}`);
@@ -160,7 +196,7 @@ export async function audit(repo: string, opts: AuditOptions = {}): Promise<Audi
       });
       for (const r of results) {
         const claim = batch.find((b) => b.claim.id === r.id)?.claim;
-        if (claim && r.verdict === 'stale') stale.set(r.id, { claim, severity: r.severity, reason: r.reason, evidence: r.evidence });
+        if (claim && r.verdict === 'stale') stale.set(r.id, { claim, severity: r.severity, reason: r.reason, evidence: r.evidence, derivable: false });
       }
     }
     stats.staleBeforeChallenge += stale.size;
@@ -176,23 +212,30 @@ export async function audit(repo: string, opts: AuditOptions = {}): Promise<Audi
     const upheld: Finding[] = [];
     for (const c of challenged) {
       const s = stale.get(c.id);
-      if (s && c.upheld) upheld.push({ claim: s.claim, severity: c.severity, reason: s.reason, evidence: s.evidence });
+      if (s && c.upheld) upheld.push({ claim: s.claim, severity: c.severity, reason: c.reason || s.reason, evidence: s.evidence, derivable: s.derivable });
     }
     stats.upheld += upheld.length;
     if (!upheld.length) continue;
 
-    if (opts.fix !== false) {
+    if (opts.fix !== false && opts.derivableFix === 'delete') {
+      // Lines that also carry a claim we are not removing must stay.
+      const removed = new Set(upheld.filter((f) => f.derivable).map((f) => f.claim.id));
+      const shared = new Set(claims.filter((c) => c.kind === 'fact' && !removed.has(c.id)).map((c) => c.line));
+      for (const f of upheld) if (f.derivable) f.fix = deleteFix(text, f.claim, shared) ?? undefined;
+    }
+    const needText = upheld.filter((f) => !f.fix);
+    if (opts.fix !== false && needText.length) {
       log(`${file.path}: writing fixes`);
       const { edits } = await call<{ edits: { id: string; old: string; new: string }[] }>({
         cwd: repo, tools: [], schema: FIX_SCHEMA, cacheKey: `fix:v${PROMPT_VERSION}`,
-        prompt: fixPrompt(file.path, text, upheld.map((f) => ({
+        prompt: fixPrompt(file.path, text, needText.map((f) => ({
           id: f.claim.id, line: f.claim.line, quote: f.claim.quote, statement: f.claim.statement, reason: f.reason, evidence: f.evidence,
         }))),
       });
       for (const e of edits) {
         const f = upheld.find((u) => u.claim.id === e.id);
         // Only keep edits that apply cleanly: old must occur exactly once.
-        if (f && e.old && e.old !== e.new && text.split(e.old).length === 2) f.fix = { old: e.old, new: e.new };
+        if (f && !f.fix && e.old && e.old !== e.new && text.split(e.old).length === 2) f.fix = { old: e.old, new: e.new, kind: 'update' };
       }
     }
     findings.push(...upheld);

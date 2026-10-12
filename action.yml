@@ -22,6 +22,12 @@ inputs:
     description: Also audit SKILL.md files.
     required: false
     default: 'false'
+  derivable-fix:
+    description: >-
+      How to fix a stale line that only restates what an agent can read from the code (a path, script or
+      target). "update" rewrites it; "delete" removes the line so it can never drift again.
+    required: false
+    default: update
   branch:
     description: Branch the fix PR is pushed to.
     required: false
@@ -112,6 +118,7 @@ runs:
         BRANCH: ${{ inputs.branch }}
         MODEL: ${{ inputs.model }}
         INCLUDE_SKILLS: ${{ inputs.include-skills }}
+        DERIVABLE_FIX: ${{ inputs.derivable-fix }}
       run: |
         # Pasted secrets often carry a trailing newline or a line break from a wrapped terminal;
         # credentials never contain whitespace, so strip it rather than fail with "Not logged in".
@@ -119,7 +126,7 @@ runs:
         export CLAUDE_CODE_OAUTH_TOKEN="$(printf %s "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"
         [ -z "$ANTHROPIC_API_KEY" ] && unset ANTHROPIC_API_KEY
         [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && unset CLAUDE_CODE_OAUTH_TOKEN
-        args=(pr "$GITHUB_WORKSPACE" --branch "$BRANCH")
+        args=(pr "$GITHUB_WORKSPACE" --branch "$BRANCH" --derivable-fix "$DERIVABLE_FIX")
         if [ -n "$SINCE" ]; then args+=(--since "$SINCE"); fi
         if [ -n "$MODEL" ]; then args+=(--model "$MODEL"); fi
         if [ "$INCLUDE_SKILLS" = "true" ]; then args+=(--include-skills); fi

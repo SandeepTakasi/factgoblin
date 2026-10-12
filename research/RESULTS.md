@@ -69,3 +69,15 @@ End to end on a private sandbox, locally and in GitHub Actions (Linux runner, pi
   re-verified on every push; bot-closed PRs counted as dismissals; legacy items swallowing a new
   finding on the same line; changes from failed runs never re-checked; a pasted secret with a trailing
   newline reported as "Not logged in".
+
+## Semantic focus + delete-line option (2026-10-12)
+
+Derivable claims (existence alone decides them) are now decided by deterministic checks only; model
+verification goes to semantic claims. `--derivable-fix delete` removes a stale derivable line
+deterministically (never inside non-shell code blocks or lines shared with another true claim).
+
+Held-out rerun: medium/high precision 7/7, medium+high recall 7/7, 0 findings on clean files, $5.01
+(vs $6.12–7.24 before; part of the drop is cached extraction, so not a clean comparison). Only 52 of
+350 in-scope claims were derivable: in real instruction files most checkable claims are semantic, so
+the cost shift is modest. Sandbox: 3 planted rots (1 semantic deprecation, 1 moved dir, 1 renamed
+script) all found and fixed in both modes; delete mode removed the stale script line with no model call.

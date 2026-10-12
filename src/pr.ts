@@ -17,6 +17,8 @@ export interface Item {
   old: string;
   new: string;
   lineText?: string; // the claim's line as it was on the base branch: a stable identity across runs
+  kind?: 'update' | 'delete';
+  derivable?: boolean;
 }
 
 const STATE = /<!-- agent-drift-state: ([A-Za-z0-9+/=]+) -->/;
@@ -61,6 +63,7 @@ export function toItems(result: AuditResult, read: (file: string) => string): It
       file: f.claim.file, line: f.claim.line, severity: f.severity, quote: f.claim.quote,
       reason: f.reason, evidence: f.evidence, old: f.fix!.old, new: f.fix!.new,
       lineText: lineAt(read(f.claim.file), f.claim.line),
+      kind: f.fix!.kind ?? 'update', derivable: f.derivable ?? false,
     }));
 }
 
@@ -97,7 +100,7 @@ export function renderBody(items: Item[], commit: string): string {
   for (const i of [...items].sort((a, b) => order[a.severity] - order[b.severity])) {
     out.push(
       '',
-      `### \`${i.file}:${i.line}\` (${i.severity})`,
+      `### \`${i.file}:${i.line}\` (${i.severity}${i.kind === 'delete' ? ', line removed' : ''})`,
       '',
       `> ${i.quote}`,
       '',
@@ -105,6 +108,11 @@ export function renderBody(items: Item[], commit: string): string {
       '',
       ...i.evidence.map((e) => `- \`${e.path}${e.line ? `:${e.line}` : ''}\`: ${e.note}`),
     );
+    if (i.kind === 'delete') {
+      out.push('', 'This line only restated something an agent can read from the code itself, so it is removed rather than rewritten: it can no longer drift.');
+    } else if (i.derivable) {
+      out.push('', '<sub>This line only restates something an agent can read from the code itself. Deleting it would stop it drifting again (run with `derivable-fix: delete` to do that automatically).</sub>');
+    }
   }
   out.push(
     '',

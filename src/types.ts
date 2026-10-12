@@ -48,7 +48,9 @@ export interface Finding {
   severity: Severity;
   reason: string;
   evidence: Evidence[];
-  fix?: { old: string; new: string };
+  /** Existence alone decides it (a path, script, target): an agent could read it from the code itself. */
+  derivable?: boolean;
+  fix?: { old: string; new: string; kind?: 'update' | 'delete' };
 }
 
 export interface InstructionFile {

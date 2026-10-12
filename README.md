@@ -6,7 +6,15 @@ dead directories, and use deprecated APIs. agent-drift finds those claims, prove
 the code, and opens one PR that fixes them.
 
 It only speaks with concrete evidence. Every finding cites the files that contradict it, survives an
-adversarial second check, and comes with an exact, minimal edit to the instruction file.
+adversarial second check, and comes with an exact, minimal edit to the instruction file. Your rules and
+preferences are never touched; only claims about what the code is or does.
+
+Model effort goes where it matters: **semantic claims** ("`nx prepush` runs all tests", "use
+`generateObject`", "`ee/` is consumed by web"), the silent, costly kind no linter can check. Lines that
+merely restate something an agent can read from the code (a path, a script name, a make target) are
+checked deterministically for free, and with `derivable-fix: delete` a stale one is removed instead of
+rewritten, so it can never drift again. Each finding is a disagreement between docs and code: if the
+code is what's wrong, close the PR and fix the code.
 
 ## Results so far
 
@@ -44,6 +52,7 @@ Requires Node ≥ 22.18 and a logged-in [Claude Code](https://claude.com/claude-
 node src/cli.ts audit path/to/repo                 # full audit, report to stdout
 node src/cli.ts audit path/to/repo --since HEAD~5  # only claims recent changes could affect
 node src/cli.ts audit path/to/repo --apply         # write the fixes into the files
+node src/cli.ts audit path/to/repo --derivable-fix delete  # remove stale lines that restate the code
 node src/cli.ts pr path/to/repo --dry-run          # what the fix PR would contain
 ```
 

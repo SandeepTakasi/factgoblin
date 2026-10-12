@@ -6,7 +6,7 @@ export function markdown(result: AuditResult): string {
     `# Agent instruction drift: ${findings.length} stale claim(s)`,
     '',
     `Commit \`${result.commit.slice(0, 12)}\` · ${stats.files} file(s) · ${stats.claims} claims (${stats.facts} facts, ` +
-      `${stats.passedMechanically} passed deterministic checks, ${stats.verified} verified) · ` +
+      `${stats.passedMechanically} passed and ${stats.staleMechanically} failed deterministic checks, ${stats.verified} model-verified) · ` +
       `${stats.staleBeforeChallenge} flagged → ${stats.upheld} survived challenge · ` +
       `${stats.llmCalls} LLM calls (${stats.cachedCalls} cached), $${stats.costUsd.toFixed(2)}`,
   ];
@@ -22,7 +22,11 @@ export function markdown(result: AuditResult): string {
       '',
       ...f.evidence.map((e) => `- \`${e.path}${e.line ? `:${e.line}` : ''}\` — ${e.note}`),
     );
-    if (f.fix) out.push('', '```diff', ...f.fix.old.split('\n').map((l) => `- ${l}`), ...f.fix.new.split('\n').map((l) => `+ ${l}`), '```');
+    if (f.fix) {
+      const minus = f.fix.old.replace(/\n$/, '').split('\n').map((l) => `- ${l}`);
+      const plus = f.fix.new ? f.fix.new.split('\n').map((l) => `+ ${l}`) : [];
+      out.push('', f.fix.kind === 'delete' ? '(delete the line)' : '', '```diff', ...minus, ...plus, '```');
+    }
   }
   return out.join('\n') + '\n';
 }

@@ -88,7 +88,10 @@ function checkScript(repo: string, v: string, r: R): CheckResult {
   if (!pkgs.length) return r('unknown', 'no package.json in repo');
   const hits = pkgs.filter((f) => readJson(repo, f)?.scripts?.[v] !== undefined);
   if (hits.length) return r('pass', `script "${v}" in ${hits.slice(0, 3).join(', ')}`);
-  return r('fail', `no package.json defines script "${v}" (checked ${pkgs.length})`);
+  // Say what does exist (root package.json first) so a fix can be written without guessing.
+  const root = pkgs.includes('package.json') ? ['package.json'] : pkgs.slice(0, 1);
+  const available = Object.keys(readJson(repo, root[0])?.scripts ?? {}).slice(0, 15);
+  return r('fail', `no package.json defines script "${v}" (checked ${pkgs.length}); ${root[0]} scripts: ${available.join(', ') || 'none'}`);
 }
 
 function checkMake(repo: string, v: string, r: R): CheckResult {
@@ -102,9 +105,9 @@ function checkMake(repo: string, v: string, r: R): CheckResult {
     }
     if (/\$\((eval|call)\b|^[^\s#:=]*%[^:=\n]*:/m.test(text)) dynamic = true;
   }
-  return dynamic
-    ? r('unknown', 'target not found literally, but Makefiles generate targets ($(eval)/$(call)/pattern rules)')
-    : r('fail', `no target "${v}" in ${files.length} Makefile(s)`);
+  if (dynamic) return r('unknown', 'target not found literally, but Makefiles generate targets ($(eval)/$(call)/pattern rules)');
+  const targets = [...new Set(files.flatMap((f) => [...readFileSync(posix.join(repo, f), 'utf8').matchAll(/^([A-Za-z0-9][\w.-]*)\s*:(?![=:])/gm)].map((m) => m[1])))];
+  return r('fail', `no target "${v}" in ${files.length} Makefile(s); targets include: ${targets.slice(0, 15).join(', ')}`);
 }
 
 function checkJust(repo: string, v: string, r: R): CheckResult {

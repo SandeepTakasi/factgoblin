@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { score, summarize, type Corpus } from '../src/bench.ts';
-import { locate } from '../src/pipeline.ts';
+import { deleteFix, locate } from '../src/pipeline.ts';
 import type { AuditResult } from '../src/pipeline.ts';
-import type { Finding, Severity } from '../src/types.ts';
+import type { Claim, Finding, Severity } from '../src/types.ts';
 
 test('locate finds the quote nearest the claimed line, ignoring whitespace; null if absent', () => {
   const lines = ['run `make build`', 'x', 'y', 'run  `make build`', 'z'];
@@ -61,4 +61,21 @@ test('summarize: precision over labeled medium/high only; high-severity recall',
   assert.equal(sum.precisionLabeled, 2 / 3);
   assert.equal(sum.recallHigh, 1);
   assert.equal(sum.recallMediumHigh, 1); // the only labels are 2 high + 1 low
+});
+
+test('deleteFix removes a whole derivable line, and refuses when that would lose information', () => {
+  const text = ['# Commands', '', '- Run the tests with `npm run test`.', '- Build: `npm run build`; lint: `npm run lint`.', 'last line `x`'].join('\n');
+  const claim = (line: number, quote: string): Claim => ({ id: 'c', file: 'AGENTS.md', line, quote, statement: '', kind: 'fact', anchors: [] });
+  assert.deepEqual(deleteFix(text, claim(3, 'Run the tests with `npm run test`.'), new Set()),
+    { old: '- Run the tests with `npm run test`.\n', new: '', kind: 'delete' });
+  assert.equal(deleteFix(text, claim(4, 'Build: `npm run build`'), new Set([4])), null); // lint claim on the same line stays true
+  assert.equal(deleteFix(text, claim(3, 'tests with `npm run test`. - Build'), new Set()), null); // spans lines
+  assert.deepEqual(deleteFix(text, claim(5, '`x`'), new Set()), { old: 'last line `x`', new: '', kind: 'delete' }); // no trailing newline
+  assert.equal(deleteFix(text + '\n- Run the tests with `npm run test`.\n', claim(3, 'Run the tests with `npm run test`.'), new Set()), null); // ambiguous
+
+  // Code blocks: shell commands are independent lines, example code and diagrams are not.
+  const fenced = ['```bash', 'npm run compile', '```', '```ts', 'const [Drawer] = useHierarchyDrawer({', '```', '```text', '├── Button.tsx', '```'].join('\n');
+  assert.equal(deleteFix(fenced, claim(2, 'npm run compile'), new Set())?.old, 'npm run compile\n');
+  assert.equal(deleteFix(fenced, claim(5, 'const [Drawer] = useHierarchyDrawer({'), new Set()), null);
+  assert.equal(deleteFix(fenced, claim(8, '├── Button.tsx'), new Set()), null);
 });
