@@ -35,6 +35,6 @@ export function discover(repo: string): InstructionFile[] {
   return [...byContent.values()].map(({ real, paths }) => {
     const canonical = relative(root, real);
     const path = paths.includes(canonical) ? canonical : paths.sort()[0];
-    return { path, aliases: paths.filter((p) => p !== path).sort() };
+    return { path, aliases: paths.filter((p) => p !== path).sort(), target: canonical };
   }).sort((a, b) => a.path.localeCompare(b.path));
 }

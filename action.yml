@@ -1,0 +1,85 @@
+name: agent-drift
+description: Opens a PR that fixes claims in AGENTS.md / CLAUDE.md / agent skills that no longer match the code.
+branding:
+  icon: check-square
+  color: green
+
+inputs:
+  anthropic-api-key:
+    description: Anthropic API key. Provide this or claude-code-oauth-token.
+    required: false
+  claude-code-oauth-token:
+    description: Claude Code OAuth token from `claude setup-token` (uses a Claude subscription). Provide this or anthropic-api-key.
+    required: false
+  since:
+    description: Only re-check claims affected by changes since this commit (on push, pass github.event.before). Empty = audit everything.
+    required: false
+    default: ''
+  include-skills:
+    description: Also audit SKILL.md files.
+    required: false
+    default: 'false'
+  branch:
+    description: Branch the fix PR is pushed to.
+    required: false
+    default: agent-drift/fixes
+  model:
+    description: Claude model for audits (empty = Claude Code default).
+    required: false
+    default: ''
+  claude-code-version:
+    description: '@anthropic-ai/claude-code version. Must support --safe-mode and --restricted.'
+    required: false
+    default: 2.1.294
+  github-token:
+    description: Token used to push the fix branch and open the PR. Needs contents:write and pull-requests:write.
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v7
+      with:
+        node-version: '22'
+
+    - name: Install Claude Code CLI
+      shell: bash
+      run: npm install -g "@anthropic-ai/claude-code@${{ inputs.claude-code-version }}"
+
+    - name: Preflight
+      shell: bash
+      env:
+        ANTHROPIC_API_KEY: ${{ inputs.anthropic-api-key }}
+        CLAUDE_CODE_OAUTH_TOKEN: ${{ inputs.claude-code-oauth-token }}
+      run: |
+        if [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+          echo "::error::Set anthropic-api-key or claude-code-oauth-token"; exit 1
+        fi
+        # Audits read untrusted text addressed to agents; refuse to run without the isolation flags.
+        help="$(claude --help)"
+        for flag in --safe-mode --restricted --strict-mcp-config --permission-prompts --json-schema; do
+          grep -q -- "$flag" <<<"$help" || { echo "::error::claude CLI lacks $flag; use a newer claude-code-version"; exit 1; }
+        done
+
+    - name: Fetch comparison commit
+      if: inputs.since != '' && inputs.since != '0000000000000000000000000000000000000000'
+      shell: bash
+      run: git -C "$GITHUB_WORKSPACE" fetch -q --depth=1 --filter=blob:none origin "${{ inputs.since }}" || echo "::warning::could not fetch ${{ inputs.since }}; auditing everything"
+
+    - name: Find and fix stale instructions
+      shell: bash
+      env:
+        ANTHROPIC_API_KEY: ${{ inputs.anthropic-api-key }}
+        CLAUDE_CODE_OAUTH_TOKEN: ${{ inputs.claude-code-oauth-token }}
+        GH_TOKEN: ${{ inputs.github-token }}
+        SINCE: ${{ inputs.since }}
+        BRANCH: ${{ inputs.branch }}
+        MODEL: ${{ inputs.model }}
+        INCLUDE_SKILLS: ${{ inputs.include-skills }}
+      run: |
+        args=(pr "$GITHUB_WORKSPACE" --branch "$BRANCH")
+        if [ -n "$SINCE" ] && [ "$SINCE" != "0000000000000000000000000000000000000000" ]; then args+=(--since "$SINCE"); fi
+        if [ -n "$MODEL" ]; then args+=(--model "$MODEL"); fi
+        if [ "$INCLUDE_SKILLS" = "true" ]; then args+=(--include-skills); fi
+        node "$GITHUB_ACTION_PATH/src/cli.ts" "${args[@]}"

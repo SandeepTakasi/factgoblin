@@ -54,4 +54,5 @@ export interface Finding {
 export interface InstructionFile {
   path: string; // repo-relative, canonical
   aliases: string[]; // symlinks / identical copies that point at the same content
+  target: string; // repo-relative real file (differs from path when path is a symlink, e.g. AGENTS.md -> .rules)
 }

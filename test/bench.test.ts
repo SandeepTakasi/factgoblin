@@ -34,7 +34,7 @@ const finding = (file: string, line: number, severity: Severity): Finding => ({
 
 const result = (findings: Finding[]): AuditResult => ({
   repo: '/tmp/r', commit: 'sha', findings,
-  files: [{ path: 'AGENTS.md', aliases: ['CLAUDE.md'] }],
+  files: [{ path: 'AGENTS.md', aliases: ['CLAUDE.md'], target: 'AGENTS.md' }],
   stats: {} as AuditResult['stats'],
 });
 

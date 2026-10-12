@@ -4,27 +4,36 @@ import { join, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 import { ensureRepo, labeledFiles, loadCorpus, score, summarize, type Score } from './bench.ts';
 import { audit, type AuditResult } from './pipeline.ts';
+import { covers, knownItems, syncPr } from './pr.ts';
 import { markdown } from './report.ts';
+import { scopeEval } from './scope-eval.ts';
 
 const USAGE = `Usage:
-  agent-drift audit [repo] [--file PATH]... [--include-skills] [--no-fix] [--apply] [--json OUT] [--model M]
-  agent-drift bench [--corpus PATH] [--repo OWNER/NAME]... [--model M]`;
+  agent-drift audit [repo] [--since REF] [--file PATH]... [--include-skills] [--no-fix] [--apply] [--json OUT] [--model M]
+  agent-drift bench [--corpus PATH] [--repo OWNER/NAME]... [--model M]
+  agent-drift scope-eval [--corpus PATH]...
+  agent-drift pr [repo] [--since REF] [--branch NAME] [--base BRANCH] [--include-skills] [--dry-run] [--model M]`;
 
 const { positionals, values } = parseArgs({
   allowPositionals: true,
   options: {
     file: { type: 'string', multiple: true },
+    since: { type: 'string' },
+    branch: { type: 'string', default: 'agent-drift/fixes' },
+    base: { type: 'string' },
+    'dry-run': { type: 'boolean' },
     'include-skills': { type: 'boolean' },
     'no-fix': { type: 'boolean' },
     apply: { type: 'boolean' },
     json: { type: 'string' },
     model: { type: 'string' },
-    corpus: { type: 'string', default: join(import.meta.dirname, '..', 'research', 'labeled-findings.json') },
+    corpus: { type: 'string', multiple: true },
     repo: { type: 'string', multiple: true },
     help: { type: 'boolean', short: 'h' },
   },
 });
 const log = (m: string) => process.stderr.write(`· ${m}\n`);
+const DEFAULT_CORPUS = join(import.meta.dirname, '..', 'research', 'labeled-findings.json');
 const [command, target] = positionals;
 
 if (values.help || !command) {
@@ -32,7 +41,7 @@ if (values.help || !command) {
 } else if (command === 'audit') {
   const repo = resolve(target ?? '.');
   const result = await audit(repo, {
-    files: values.file, includeSkills: values['include-skills'], fix: !values['no-fix'], model: values.model, log,
+    files: values.file, since: values.since, includeSkills: values['include-skills'], fix: !values['no-fix'], model: values.model, log,
   });
   if (values.json) writeFileSync(values.json, JSON.stringify(result, null, 2));
   if (values.apply) applyFixes(result);
@@ -40,6 +49,16 @@ if (values.help || !command) {
   process.exitCode = result.findings.some((f) => f.severity !== 'low') ? 1 : 0;
 } else if (command === 'bench') {
   await bench();
+} else if (command === 'pr') {
+  const repo = resolve(target ?? '.');
+  const known = knownItems(repo, values.branch!);
+  const skip = (c: { file: string; line: number }) => covers(known, c.file, readFileSync(join(repo, c.file), 'utf8'), c.line);
+  const result = await audit(repo, { since: values.since || undefined, skip, includeSkills: values['include-skills'], fix: true, model: values.model, log });
+  log(`audit: ${result.findings.length} finding(s), ${result.stats.skippedByScope} claim(s) skipped by scope, $${result.stats.costUsd.toFixed(2)}`);
+  syncPr(result, { branch: values.branch!, base: values.base, dryRun: values['dry-run'], log });
+} else if (command === 'scope-eval') {
+  const paths = values.corpus?.length ? values.corpus : [DEFAULT_CORPUS, join(import.meta.dirname, '..', 'research', 'heldout-findings.json')];
+  console.log(await scopeEval(paths.map(loadCorpus), 20, log));
 } else {
   console.error(USAGE);
   process.exitCode = 2;
@@ -60,7 +79,7 @@ function applyFixes(result: AuditResult) {
 }
 
 async function bench() {
-  const corpus = loadCorpus(values.corpus!);
+  const corpus = loadCorpus(values.corpus?.[0] ?? DEFAULT_CORPUS);
   const names = values.repo?.length ? values.repo : Object.keys(corpus.repos);
   const scores: { repo: string; score: Score; result: AuditResult }[] = [];
   for (const name of names) {

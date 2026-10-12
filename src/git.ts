@@ -1,7 +1,8 @@
 import { execFileSync } from 'node:child_process';
 
 export function git(repo: string, args: string[]): string {
-  return execFileSync('git', ['-C', repo, ...args], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
+  // stderr is captured (and attached to the error on failure) instead of leaking into our output.
+  return execFileSync('git', ['-C', repo, ...args], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
 }
 
 /** Like git(), but returns null instead of throwing (git grep exits 1 on no match). */

@@ -1,0 +1,31 @@
+# Copy to .github/workflows/agent-drift.yml.
+# On every push to the default branch, re-checks only the agent-instruction claims the push could
+# have made stale; every Monday, audits everything. Findings arrive as one PR you can merge or close.
+name: agent-drift
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: agent-drift
+  cancel-in-progress: false
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: SandeepTakasi/agent-drift@main # pin to a release tag once published
+        with:
+          # One of these two, stored as a repository secret:
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # claude-code-oauth-token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          since: ${{ github.event_name == 'push' && github.event.before || '' }}

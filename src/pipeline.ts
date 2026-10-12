@@ -4,6 +4,7 @@ import { check } from './checks.ts';
 import { discover } from './discover.ts';
 import { git } from './git.ts';
 import { runClaude, type LlmCall, type LlmResult } from './llm.ts';
+import { affected, changeSet } from './scope.ts';
 import {
   CHALLENGE_SCHEMA, EXTRACT_SCHEMA, FIX_SCHEMA, PROMPT_VERSION, VERIFY_SCHEMA,
   challengePrompt, extractPrompt, fixPrompt, verifyPrompt,
@@ -12,6 +13,8 @@ import type { Anchor, Claim, ClaimKind, Evidence, Finding, InstructionFile, Seve
 
 export interface AuditOptions {
   files?: string[]; // only these instruction files (path or alias)
+  since?: string; // only re-check claims the changes since this commit could have affected
+  skip?: (claim: Claim) => boolean; // e.g. claims an open fix PR already covers
   includeSkills?: boolean;
   fix?: boolean; // generate fix text (default true)
   model?: string;
@@ -24,6 +27,7 @@ export interface AuditStats {
   facts: number;
   passedMechanically: number;
   verified: number;
+  skippedByScope: number;
   staleBeforeChallenge: number;
   upheld: number;
   llmCalls: number;
@@ -71,7 +75,7 @@ export async function audit(repo: string, opts: AuditOptions = {}): Promise<Audi
   const log = opts.log ?? (() => {});
   const commit = git(repo, ['rev-parse', 'HEAD']).trim();
   const stats: AuditStats = {
-    files: 0, claims: 0, facts: 0, passedMechanically: 0, verified: 0, staleBeforeChallenge: 0, upheld: 0,
+    files: 0, claims: 0, facts: 0, passedMechanically: 0, verified: 0, skippedByScope: 0, staleBeforeChallenge: 0, upheld: 0,
     llmCalls: 0, cachedCalls: 0, costUsd: 0, llmMs: 0,
   };
   const call = async <T>(c: Omit<LlmCall, 'model'>): Promise<T> => {
@@ -94,6 +98,11 @@ export async function audit(repo: string, opts: AuditOptions = {}): Promise<Audi
   }
   stats.files = files.length;
 
+  // Scoped mode. Unknown base (force-push, shallow clone) or a huge change set: audit everything.
+  let changed = opts.since ? changeSet(repo, opts.since) : null;
+  if (opts.since && changed === null) log(`can't diff against ${opts.since}; auditing everything`);
+  if (changed && !changed.complete) log(`diff since ${opts.since} too large to read; scoping by paths only`);
+
   const findings: Finding[] = [];
   for (const file of files) {
     const text = readFileSync(join(repo, file.path), 'utf8');
@@ -111,9 +120,22 @@ export async function audit(repo: string, opts: AuditOptions = {}): Promise<Audi
       claims.push({ ...c, id: `c${claims.length + 1}`, file: file.path, line });
     }
     stats.claims += claims.length;
+    if (opts.skip) {
+      const before = claims.length;
+      claims.splice(0, claims.length, ...claims.filter((c) => !opts.skip!(c)));
+      if (claims.length < before) log(`${file.path}: ${before - claims.length} claim(s) already proposed or dismissed`);
+    }
     const checked = claims.map((claim) => ({ claim, results: claim.anchors.map((a) => check(repo, file.path, a)) }));
     // Safety net: a non-fact whose concrete anchor deterministically fails still gets verified.
-    const facts = checked.filter(({ claim, results }) => claim.kind === 'fact' || results.some((r) => r.status === 'fail'));
+    let facts = checked.filter(({ claim, results }) => claim.kind === 'fact' || results.some((r) => r.status === 'fail'));
+    if (changed) {
+      const edited = [file.path, file.target, ...file.aliases].some((p) => changed!.files.includes(p));
+      const hits = affected(facts, changed, edited);
+      stats.skippedByScope += facts.length - hits.size;
+      facts = facts.filter(({ claim }) => hits.has(claim.id));
+      if (!facts.length) continue;
+      log(`${file.path}: ${facts.length} claim(s) in scope (${[...new Set(hits.values())].slice(0, 3).join('; ')})`);
+    }
     stats.facts += facts.length;
 
     const toVerify: { claim: (typeof claims)[number]; checks: string[] }[] = [];
