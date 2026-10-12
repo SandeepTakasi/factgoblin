@@ -1,6 +1,10 @@
-# factgoblin
+<p align="center">
+  <img src="assets/factgoblin.png" width="180" alt="factgoblin: a goblin checking a document with a magnifying glass">
+</p>
 
-**Your agents trust your docs. The goblin doesn't.**
+<h1 align="center">factgoblin</h1>
+
+<p align="center"><strong>Your agents trust your docs. The goblin doesn't.</strong></p>
 
 Coding agents follow `AGENTS.md`, `CLAUDE.md`, Cursor rules and skills to the letter. When the code
 moves on and those files don't, agents confidently run commands that no longer exist, put code in
