@@ -1,8 +1,10 @@
-# agent-drift
+# factgoblin
+
+**Your agents trust your docs. The goblin doesn't.**
 
 Coding agents follow `AGENTS.md`, `CLAUDE.md`, Cursor rules and skills to the letter. When the code
 moves on and those files don't, agents confidently run commands that no longer exist, put code in
-dead directories, and use deprecated APIs. agent-drift finds those claims, proves them stale against
+dead directories, and use deprecated APIs. factgoblin finds those claims, proves them stale against
 the code, and opens one PR that fixes them.
 
 It only speaks with concrete evidence. Every finding cites the files that contradict it, survives an
@@ -32,14 +34,14 @@ close it to dismiss those fixes for good. It never comments on contributors' PRs
 
 ```yaml
 - uses: actions/checkout@v7
-- uses: SandeepTakasi/agent-drift@main
+- uses: SandeepTakasi/factgoblin@main
   with:
     anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}   # or claude-code-oauth-token
 ```
 
 The first run audits everything; each later push re-checks only what changed since the last
 successful run, so a failed run never hides drift. Full workflow:
-[examples/agent-drift.yml](examples/agent-drift.yml). The job needs `contents: write`,
+[examples/factgoblin.yml](examples/factgoblin.yml). The job needs `contents: write`,
 `pull-requests: write` and `actions: read`, and the repository setting "Allow GitHub Actions to
 create and approve pull requests". PRs opened with the default `GITHUB_TOKEN` don't trigger other
 workflows; pass a PAT or app token as `github-token` if you need CI on them.

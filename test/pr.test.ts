@@ -53,4 +53,6 @@ test('PR body state round-trips and survives unicode', () => {
   assert.match(body, /### `AGENTS\.md:4` \(medium\)/);
   assert.deepEqual(parseState(body), items);
   assert.deepEqual(parseState('no state here'), []);
+  // PRs opened before the rename carried the old marker.
+  assert.deepEqual(parseState(body.replace('factgoblin-state', 'agent-drift-state')), items);
 });

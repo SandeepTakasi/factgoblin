@@ -3,7 +3,7 @@ import type { AuditResult } from './pipeline.ts';
 export function markdown(result: AuditResult): string {
   const { findings, stats } = result;
   const out = [
-    `# Agent instruction drift: ${findings.length} stale claim(s)`,
+    `# factgoblin: ${findings.length} stale claim(s) in agent instructions`,
     '',
     `Commit \`${result.commit.slice(0, 12)}\` · ${stats.files} file(s) · ${stats.claims} claims (${stats.facts} facts, ` +
       `${stats.passedMechanically} passed and ${stats.staleMechanically} failed deterministic checks, ${stats.verified} model-verified) · ` +

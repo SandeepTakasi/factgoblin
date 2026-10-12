@@ -1,7 +1,7 @@
-# Copy to .github/workflows/agent-drift.yml.
+# Copy to .github/workflows/factgoblin.yml.
 # On every push to the default branch, re-checks only the agent-instruction claims the push could
 # have made stale; every Monday, audits everything. Findings arrive as one PR you can merge or close.
-name: agent-drift
+name: factgoblin
 
 on:
   push:
@@ -16,7 +16,7 @@ permissions:
   actions: read # to find the last successful run
 
 concurrency:
-  group: agent-drift
+  group: factgoblin
   cancel-in-progress: false
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: SandeepTakasi/agent-drift@main # pin to a release tag once published
+      - uses: SandeepTakasi/factgoblin@main # pin to a release tag once published
         with:
           # One of these two, stored as a repository secret:
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}

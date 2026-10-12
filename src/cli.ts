@@ -9,17 +9,17 @@ import { markdown } from './report.ts';
 import { scopeEval } from './scope-eval.ts';
 
 const USAGE = `Usage:
-  agent-drift audit [repo] [--since REF] [--file PATH]... [--include-skills] [--no-fix] [--derivable-fix update|delete] [--apply] [--json OUT] [--model M]
-  agent-drift bench [--corpus PATH] [--repo OWNER/NAME]... [--model M]
-  agent-drift scope-eval [--corpus PATH]...
-  agent-drift pr [repo] [--since REF] [--branch NAME] [--base BRANCH] [--include-skills] [--derivable-fix update|delete] [--dry-run] [--model M]`;
+  factgoblin audit [repo] [--since REF] [--file PATH]... [--include-skills] [--no-fix] [--derivable-fix update|delete] [--apply] [--json OUT] [--model M]
+  factgoblin bench [--corpus PATH] [--repo OWNER/NAME]... [--model M]
+  factgoblin scope-eval [--corpus PATH]...
+  factgoblin pr [repo] [--since REF] [--branch NAME] [--base BRANCH] [--include-skills] [--derivable-fix update|delete] [--dry-run] [--model M]`;
 
 const { positionals, values } = parseArgs({
   allowPositionals: true,
   options: {
     file: { type: 'string', multiple: true },
     since: { type: 'string' },
-    branch: { type: 'string', default: 'agent-drift/fixes' },
+    branch: { type: 'string', default: 'factgoblin/fixes' },
     base: { type: 'string' },
     'dry-run': { type: 'boolean' },
     'derivable-fix': { type: 'string', default: 'update' },

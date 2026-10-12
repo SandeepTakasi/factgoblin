@@ -1,4 +1,4 @@
-name: agent-drift
+name: factgoblin
 description: Opens a PR that fixes claims in AGENTS.md / CLAUDE.md / agent skills that no longer match the code.
 branding:
   icon: check-square
@@ -31,7 +31,7 @@ inputs:
   branch:
     description: Branch the fix PR is pushed to.
     required: false
-    default: agent-drift/fixes
+    default: factgoblin/fixes
   model:
     description: Claude model for audits (empty = Claude Code default).
     required: false

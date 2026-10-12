@@ -43,8 +43,8 @@ export function isolationArgs(tools: string[]): string[] {
 
 export async function runClaude<T>(call: LlmCall): Promise<LlmResult<T>> {
   const key = createHash('sha256')
-    // DRIFT_CACHE_SALT gives a run its own cache, e.g. to measure run-to-run variance.
-    .update(JSON.stringify([call.prompt, call.schema, call.tools, call.model ?? '', call.cacheKey, process.env.DRIFT_CACHE_SALT ?? '']))
+    // FACTGOBLIN_CACHE_SALT gives a run its own cache, e.g. to measure run-to-run variance.
+    .update(JSON.stringify([call.prompt, call.schema, call.tools, call.model ?? '', call.cacheKey, process.env.FACTGOBLIN_CACHE_SALT ?? '']))
     .digest('hex');
   const cacheFile = join(CACHE_DIR, `${key}.json`);
   try {

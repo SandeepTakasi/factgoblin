@@ -1,5 +1,5 @@
 {
-  "name": "agent-drift",
+  "name": "factgoblin",
   "version": "0.0.0",
   "private": true,
   "description": "Finds claims in agent instruction files (AGENTS.md, CLAUDE.md, skills, rules) that no longer match the code, with evidence and a fix.",
@@ -8,7 +8,7 @@
     "node": ">=22.18"
   },
   "bin": {
-    "agent-drift": "src/cli.ts"
+    "factgoblin": "src/cli.ts"
   },
   "scripts": {
     "test": "node --test \"test/**/*.test.ts\"",

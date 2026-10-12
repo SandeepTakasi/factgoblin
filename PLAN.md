@@ -62,7 +62,7 @@ attention than human ones (mitigation: maintainers install it themselves).
    file → all its claims. Only affected claims are verified.
 2. Scoping eval (no LLM): for each labeled stale claim, would scope() select it given the real diff
    from the instruction file's last edit to the pinned commit? Target: ≥90% of medium/high.
-3. `pr` command: scoped or full audit → apply medium/high fixes → branch `agent-drift/fixes` →
+3. `pr` command: scoped or full audit → apply medium/high fixes → branch `factgoblin/fixes` →
    open/update one PR with evidence. Guard: an edit's `old` text must overlap the flagged claim's
    lines (±2), else dropped.
 4. Composite GitHub Action + example workflow: push + weekly schedule, preflight that the Claude
