@@ -25,6 +25,19 @@ const STATE = /<!-- agent-drift-state: ([A-Za-z0-9+/=]+) -->/;
 const key = (i: Pick<Item, 'file' | 'old' | 'lineText'>) => `${i.file}\0${i.lineText ?? i.old}`;
 const lineAt = (text: string, line: number) => (text.split('\n')[line - 1] ?? '').trim();
 
+/**
+ * Items from PRs opened before lineText existed: recover it from the base branch, but only while the
+ * item's stale text is still on that line. Otherwise the line now says something else and the old item
+ * must not match it (it once swallowed a brand-new finding on the same line number).
+ */
+export function legacyLines(items: Item[], read: (file: string) => string): Item[] {
+  return items.flatMap((i) => {
+    if (i.lineText) return [i];
+    const lineText = lineAt(read(i.file), i.line);
+    return lineText.includes(i.old.trim()) ? [{ ...i, lineText }] : [];
+  });
+}
+
 /** Whether a claim on this line is already covered by one of these items. */
 export function covers(items: Item[], file: string, text: string, line: number): boolean {
   const lineText = lineAt(text, line);
@@ -140,8 +153,7 @@ export function syncPr(result: AuditResult, opts: PrOptions): string | null {
 
   const prs = listPrs(repo, opts.branch);
   const open = prs.find((p) => p.state === 'OPEN');
-  // PRs opened before items carried lineText: recover it from the base branch.
-  const withLine = (items: Item[]) => items.map((i) => (i.lineText ? i : { ...i, lineText: lineAt(read(i.file), i.line) }));
+  const withLine = (items: Item[]) => legacyLines(items, read);
   const dismissed = new Set<string>(prs.filter((p) => p.state === 'CLOSED').flatMap((p) => withLine(parseState(p.body)).map(key)));
   const existing = open ? withLine(parseState(open.body)) : [];
   const items = merge(existing, toItems(result, read), read, dismissed);

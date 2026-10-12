@@ -46,3 +46,26 @@ Run 2: 16/16 precision on medium/high, 9/11 high recall, $18.83.
   are noisy in both directions.
 - Single run per configuration; run-to-run variance not yet measured (deno `spec::` flipped between
   dev runs 1 and 2, though prompts also changed).
+
+## M2: change scoping and fix PRs (2026-10-12)
+
+Scoping (`scope-eval`, no LLM; 30 medium/high labels across both corpora, 420 real pushes):
+
+| | v1 (paths + manifests + words) | v3 (changed lines, code-like tokens) |
+|---|---|---|
+| Share of claims re-checked per push, median / p90 | 70% / 93% | 7% / 18% |
+| Labels selected over the window since the file's last edit | 30/30 (mostly by coincidence) | 28/30 |
+
+The 2 v3 misses: nx `prepush` was already stale when AGENTS.md was last edited (covered at that
+edit, or by the first-run full audit); twenty's window diff (11,534 files) was too large to read
+(real pushes are small; the weekly full audit is the backstop).
+
+End to end on a private sandbox, locally and in GitHub Actions (Linux runner, pinned CLI 2.1.294):
+- 3 planted rots → one PR with 3 correct one-line fixes ($0.29); additive update to 4 ($0.09);
+  rerun with nothing new: PR untouched ($0.00); dismissal respected; manual fix on main → bot closes
+  its PR; merge → next run is a no-op ($0.04); rot pushed in a deliberately failed run → caught by
+  the next successful run ($0.06).
+- Bugs found and fixed only by running it for real: reworded fixes evading dismissal; dismissed claims
+  re-verified on every push; bot-closed PRs counted as dismissals; legacy items swallowing a new
+  finding on the same line; changes from failed runs never re-checked; a pasted secret with a trailing
+  newline reported as "Not logged in".

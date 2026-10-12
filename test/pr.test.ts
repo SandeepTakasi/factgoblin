@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { editTouchesClaim, merge, parseState, renderBody, type Item } from '../src/pr.ts';
+import { editTouchesClaim, legacyLines, merge, parseState, renderBody, type Item } from '../src/pr.ts';
 import type { Finding } from '../src/types.ts';
 
 const text = ['# Agents', '', 'Run `nx prepush` to run all tests.', '', '## Other', 'Unrelated line.'].join('\n');
@@ -37,6 +37,14 @@ test('merge identifies proposals by the stale line, not by fix wording (dismissa
   const dismissed = new Set(['AGENTS.md\0Run the tests with `npm run test`.']);
   assert.deepEqual(merge([], [reworded], read, dismissed), []);
   assert.equal(merge([dismissedItem], [reworded], read, new Set()).length, 1); // deduped, not doubled
+});
+
+test('legacy items match a line only while their stale text is still on it (sandbox bug)', () => {
+  const legacy = item('AGENTS.md', 'Run the tests with `npm run test`.', 2); // no lineText
+  const stillStale = () => '# x\n- Run the tests with `npm run test`.\n';
+  const rewritten = () => '# x\n- Run the tests with `npm run test:unit`.\n';
+  assert.equal(legacyLines([legacy], stillStale)[0].lineText, '- Run the tests with `npm run test`.');
+  assert.deepEqual(legacyLines([legacy], rewritten), []);
 });
 
 test('PR body state round-trips and survives unicode', () => {
