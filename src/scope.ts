@@ -30,10 +30,13 @@ export function changeSet(repo: string, base: string, head = 'HEAD'): ChangeSet 
   }
   if (diff !== null && diff.length < MAX_DIFF_BYTES) {
     let current = '';
+    let previous = '';
     for (const l of diff.split('\n')) {
-      if (l.startsWith('+++ ')) current = l.slice(4).replace(/^b\//, '');
-      else if (l.startsWith('--- ')) continue;
-      else if ((l.startsWith('+') || l.startsWith('-')) && current) {
+      if (l.startsWith('--- ')) previous = l.slice(4).replace(/^a\//, '');
+      else if (l.startsWith('+++ ')) {
+        const next = l.slice(4).replace(/^b\//, '');
+        current = next === '/dev/null' ? previous : next; // deleted file: keep its own name
+      } else if ((l.startsWith('+') || l.startsWith('-')) && current) {
         const arr = lines.get(current) ?? [];
         arr.push(l.slice(1));
         lines.set(current, arr);
@@ -57,14 +60,16 @@ const STOP = new Set(
 
 /** Code-like tokens a change would have to mention to affect this claim (never plain English words). */
 export function tokens(claim: Claim): string[] {
+  // Backticked spans and anchor values are code by definition; prose words never count.
   const code = [...claim.quote.matchAll(/`([^`]+)`/g)].map((m) => m[1]);
+  const anchorWords = new Set(claim.anchors.flatMap((a) => a.value.split(/[\s'"()[\]{},;|<>=]+/)));
   const sources = [...code, ...claim.anchors.map((a) => a.value)];
   const out = new Set<string>();
   for (const s of sources) {
     for (const raw of s.split(/[\s'"()[\]{},;|<>=]+/)) {
       const t = raw.replace(/^[-./:]+|[.:,]+$/g, '');
       if (t.length < 4 || /^\d+$/.test(t) || STOP.has(t.toLowerCase())) continue;
-      const codeLike = /[_./:@-]/.test(t) || /[a-z][A-Z]/.test(t) || code.some((c) => c.trim() === raw);
+      const codeLike = /[_./:@-]/.test(t) || /[a-z][A-Z]/.test(t) || code.some((c) => c.trim() === raw) || anchorWords.has(raw);
       if (!codeLike) continue;
       out.add(t);
       const base = posix.basename(t);

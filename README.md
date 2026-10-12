@@ -27,11 +27,12 @@ close it to dismiss those fixes for good. It never comments on contributors' PRs
 - uses: SandeepTakasi/agent-drift@main
   with:
     anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}   # or claude-code-oauth-token
-    since: ${{ github.event_name == 'push' && github.event.before || '' }}
 ```
 
-Full workflow: [examples/agent-drift.yml](examples/agent-drift.yml). The job needs
-`contents: write` and `pull-requests: write`, and the repository setting "Allow GitHub Actions to
+The first run audits everything; each later push re-checks only what changed since the last
+successful run, so a failed run never hides drift. Full workflow:
+[examples/agent-drift.yml](examples/agent-drift.yml). The job needs `contents: write`,
+`pull-requests: write` and `actions: read`, and the repository setting "Allow GitHub Actions to
 create and approve pull requests". PRs opened with the default `GITHUB_TOKEN` don't trigger other
 workflows; pass a PAT or app token as `github-token` if you need CI on them.
 

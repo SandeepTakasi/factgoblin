@@ -53,6 +53,8 @@ test('tokens keeps code-like identifiers and paths, never plain English words', 
   const t = tokens(claim('c', 'Structured output: run `pnpm build`, then `generateObject` in `cli/args/flags.rs`', []));
   assert.ok(t.includes('cli/args/flags.rs') && t.includes('flags.rs') && t.includes('generateObject'));
   assert.ok(!t.includes('pnpm') && !t.includes('build') && !t.includes('Structured') && !t.includes('output'));
+  // A word that only appears in a command anchor is still code (nx prepush miss in scope-eval).
+  assert.ok(tokens(claim('c', 'This ensures that all code passes all tests.', [{ type: 'command', value: 'nx prepush' }])).includes('prepush'));
 });
 
 test('affected: path, manifest, token-in-content, failing check, untouched, instruction edit', () => {

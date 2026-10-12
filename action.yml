@@ -12,9 +12,12 @@ inputs:
     description: Claude Code OAuth token from `claude setup-token` (uses a Claude subscription). Provide this or anthropic-api-key.
     required: false
   since:
-    description: Only re-check claims affected by changes since this commit (on push, pass github.event.before). Empty = audit everything.
+    description: >-
+      Commit to compare against. Default "auto": on push, the commit of this workflow's last successful
+      run on this branch (so changes from failed or skipped runs are never lost); otherwise, and on the
+      first run, audit everything. "full" always audits everything.
     required: false
-    default: ''
+    default: auto
   include-skills:
     description: Also audit SKILL.md files.
     required: false
@@ -56,16 +59,48 @@ runs:
         if [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
           echo "::error::Set anthropic-api-key or claude-code-oauth-token"; exit 1
         fi
+        # Pasted secrets often carry a trailing newline or a line break from a wrapped terminal;
+        # credentials never contain whitespace, so strip it rather than fail with "Not logged in".
+        export ANTHROPIC_API_KEY="$(printf %s "$ANTHROPIC_API_KEY" | tr -d '[:space:]')"
+        export CLAUDE_CODE_OAUTH_TOKEN="$(printf %s "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"
+        [ -z "$ANTHROPIC_API_KEY" ] && unset ANTHROPIC_API_KEY
+        [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && unset CLAUDE_CODE_OAUTH_TOKEN
         # Audits read untrusted text addressed to agents; refuse to run without the isolation flags.
         help="$(claude --help)"
         for flag in --safe-mode --restricted --strict-mcp-config --permission-prompts --json-schema; do
           grep -q -- "$flag" <<<"$help" || { echo "::error::claude CLI lacks $flag; use a newer claude-code-version"; exit 1; }
         done
+        # Fail fast, and clearly, if the credential doesn't work. Never prints the credential itself.
+        if [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] && [[ "$CLAUDE_CODE_OAUTH_TOKEN" != sk-ant-oat* ]]; then
+          echo "::warning::claude-code-oauth-token (length ${#CLAUDE_CODE_OAUTH_TOKEN}) doesn't look like a Claude Code token (expected prefix sk-ant-oat). It may have been copied incompletely; regenerate it with 'claude setup-token'."
+        fi
+        out="$(claude -p 'Reply with the word ok.' --safe-mode --restricted --strict-mcp-config --permission-prompts none --no-session-persistence --tools '' --output-format json --max-budget-usd 0.05 < /dev/null 2>&1 || true)"
+        node -e 'const o=JSON.parse(process.argv[1]);if(o.is_error){console.log("::error::Claude Code could not authenticate: "+String(o.result).slice(0,200));process.exit(1)}' "$out" \
+          || { echo "::error::Claude Code authentication check failed"; exit 1; }
 
-    - name: Fetch comparison commit
-      if: inputs.since != '' && inputs.since != '0000000000000000000000000000000000000000'
+    - name: Pick comparison commit
+      id: base
       shell: bash
-      run: git -C "$GITHUB_WORKSPACE" fetch -q --depth=1 --filter=blob:none origin "${{ inputs.since }}" || echo "::warning::could not fetch ${{ inputs.since }}; auditing everything"
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        SINCE: ${{ inputs.since }}
+        EVENT: ${{ github.event_name }}
+        BRANCH: ${{ github.ref_name }}
+      run: |
+        since=""
+        if [ "$SINCE" = "auto" ]; then
+          if [ "$EVENT" = "push" ]; then
+            # Needs actions: read. Without it (or on the first run) we fall back to a full audit.
+            since="$(gh run list -R "$GITHUB_REPOSITORY" --workflow "$GITHUB_WORKFLOW" --branch "$BRANCH" --status success --limit 1 --json headSha --jq '.[0].headSha // empty' 2>/dev/null || true)"
+            [ -z "$since" ] && echo "No earlier successful run found: auditing everything (first run, or missing actions: read)."
+          fi
+        elif [ "$SINCE" != "full" ]; then
+          since="$SINCE"
+        fi
+        if [ -n "$since" ] && ! git -C "$GITHUB_WORKSPACE" fetch -q --depth=1 --filter=blob:none origin "$since"; then
+          echo "::warning::could not fetch $since; auditing everything"; since=""
+        fi
+        echo "since=$since" >> "$GITHUB_OUTPUT"
 
     - name: Find and fix stale instructions
       shell: bash
@@ -73,13 +108,19 @@ runs:
         ANTHROPIC_API_KEY: ${{ inputs.anthropic-api-key }}
         CLAUDE_CODE_OAUTH_TOKEN: ${{ inputs.claude-code-oauth-token }}
         GH_TOKEN: ${{ inputs.github-token }}
-        SINCE: ${{ inputs.since }}
+        SINCE: ${{ steps.base.outputs.since }}
         BRANCH: ${{ inputs.branch }}
         MODEL: ${{ inputs.model }}
         INCLUDE_SKILLS: ${{ inputs.include-skills }}
       run: |
+        # Pasted secrets often carry a trailing newline or a line break from a wrapped terminal;
+        # credentials never contain whitespace, so strip it rather than fail with "Not logged in".
+        export ANTHROPIC_API_KEY="$(printf %s "$ANTHROPIC_API_KEY" | tr -d '[:space:]')"
+        export CLAUDE_CODE_OAUTH_TOKEN="$(printf %s "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"
+        [ -z "$ANTHROPIC_API_KEY" ] && unset ANTHROPIC_API_KEY
+        [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && unset CLAUDE_CODE_OAUTH_TOKEN
         args=(pr "$GITHUB_WORKSPACE" --branch "$BRANCH")
-        if [ -n "$SINCE" ] && [ "$SINCE" != "0000000000000000000000000000000000000000" ]; then args+=(--since "$SINCE"); fi
+        if [ -n "$SINCE" ]; then args+=(--since "$SINCE"); fi
         if [ -n "$MODEL" ]; then args+=(--model "$MODEL"); fi
         if [ "$INCLUDE_SKILLS" = "true" ]; then args+=(--include-skills); fi
         node "$GITHUB_ACTION_PATH/src/cli.ts" "${args[@]}"
