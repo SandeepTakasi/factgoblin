@@ -1,8 +1,13 @@
 {
   "name": "factgoblin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Finds claims in agent instruction files (AGENTS.md, CLAUDE.md, skills, rules) that no longer match the code, with evidence and a fix.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandeepTakasi/factgoblin.git"
+  },
   "type": "module",
   "engines": {
     "node": ">=22.18"

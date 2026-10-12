@@ -38,7 +38,7 @@ close it to dismiss those fixes for good. It never comments on contributors' PRs
 
 ```yaml
 - uses: actions/checkout@v7
-- uses: SandeepTakasi/factgoblin@main
+- uses: SandeepTakasi/factgoblin@v0
   with:
     anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}   # or claude-code-oauth-token
 ```
@@ -52,9 +52,12 @@ workflows; pass a PAT or app token as `github-token` if you need CI on them.
 
 ## CLI
 
-Requires Node ≥ 22.18 and a logged-in [Claude Code](https://claude.com/claude-code) CLI.
+factgoblin ships as a GitHub Action; it is not published to npm. To run it locally, clone the repo
+(Node ≥ 22.18 runs the TypeScript directly, no build or install step) and log in to
+[Claude Code](https://claude.com/claude-code):
 
 ```bash
+git clone https://github.com/SandeepTakasi/factgoblin && cd factgoblin
 node src/cli.ts audit path/to/repo                 # full audit, report to stdout
 node src/cli.ts audit path/to/repo --since HEAD~5  # only claims recent changes could affect
 node src/cli.ts audit path/to/repo --apply         # write the fixes into the files
@@ -77,3 +80,7 @@ they touch only the lines of the claim being fixed.
 - Change scoping can miss claims whose staleness comes from files they don't name; the weekly full
   audit is the backstop.
 - Evaluated on a small sample (see RESULTS.md); treat the numbers as early.
+
+## License
+
+[MIT](LICENSE)

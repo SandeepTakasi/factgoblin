@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: SandeepTakasi/factgoblin@main # pin to a release tag once published
+      - uses: SandeepTakasi/factgoblin@v0 # or pin an exact release, e.g. @v0.1.0
         with:
           # One of these two, stored as a repository secret:
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
